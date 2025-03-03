@@ -1,7 +1,12 @@
 The purpose of this project is to process and analyze landlord finances using publicly available data from the U.S. Census Bureau's Rental Housing Finance Survey.
 
 # Data sources
-Raw data are contained in the `data/` directory of this project. They are downloaded in CSV format from the [Census Bureau's webpage for the Rental Housing Finance Survey](https://www.census.gov/programs-surveys/rhfs/data.html). 
+Raw data are contained in the `data/` directory of this project. They are downloaded in CSV format from the [Census Bureau's webpage for the Rental Housing Finance Survey](https://www.census.gov/programs-surveys/rhfs/data.html) alongside their documentation and organized by year into directories for 2012, 2015, 2018, and 2021.
+
+The RHFS contains a significant amount of nonresponse. Understanding the reasons for nonresponse is important to understand the general applicability of the survey toward national conclusions. Most of the metadata about the survey can be gleaned from the `OUTCOME` variable, which is included in all four survey waves [fact check]. However, some surveys provide metadata on missing and incomplete responses, while others do note. Notes on the idiosyncrasies of each survey are below.
+
+- *2012*: According the 2012 codebook, there were xx properties sampled, XX complete responses, and XX incomplete or missing responses. Of the missing responses, XX% were due to __, Y% were due to XX.... etc
+- *2015*: According to the 2015 codebook, the 2015 RHFS sample included 10,257 properties. Of those properties, there were 3896 accompanied by "complete interviews". Neither the documentation nor data provided in the PUF file includes metadata on incomplete cases, so the reasons for incomplete and missing interviews are unclear. (Interviewee declined? Unavailable? Ineligible for survey?)
 
 ## 2012
 2012 data are located in `data/2012` and were obtained by
