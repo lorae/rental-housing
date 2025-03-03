@@ -1,0 +1,599 @@
+Variable,Value,Value_Label
+APPEAL,-9,Not reported
+APPEAL,1,Yes
+APPEAL,2,No
+APPEAL,3,Don't know
+APPVALDK,-9,Not reported
+APPVALDK,-8,Not applicable
+APPVALDK,1,Don't know
+ARM,-9,Not reported
+ARM,-8,Not applicable
+ARM,1,Month
+ARM,2,3 months
+ARM,3,6 months
+ARM,4,Year
+ARM,5,3 years
+ARM,6,5 years
+ARM,7,Other
+BENEOTH,-9,Not reported
+BENEOTH,9,Yes
+COMMSPACE,-9,Not reported
+COMMSPACE,1,Yes
+COMMSPACE,2,No
+CONCSS,-9,Not reported
+CONCSS,1,No rent concessions
+CONCSS,2,Less than 1 month's rent
+CONCSS,3,1 month's rent
+CONCSS,4,Between 1 and 2 months' rent
+CONCSS,5,2 months' rent
+CONCSS,6,Between 2 and 3 months' rent
+CONCSS,7,3 or more months' rent
+CONTRACT,-9,Not reported
+CONTRACT,-8,Not applicable
+CONTRACT,1,Yes
+CONTRACT,2,No
+CPACCESS,0,No upgrade
+CPACCESS,1,Upgraded handicapped / universal access
+CPBATH,0,No upgrade
+CPBATH,1,Upgraded bathroom facilities
+CPDOOR,0,No upgrade
+CPDOOR,1,Upgraded doors
+CPELESYS,0,No upgrade
+CPELESYS,1,Upgraded electrical system
+CPEXTER,0,No upgrade
+CPEXTER,1,Upgraded exterior
+CPFLOOR,0,No upgrade
+CPFLOOR,1,Upgraded flooring / carpeting
+CPHEAT,0,No upgrade
+CPHEAT,1,Upgraded heating or air conditioning system
+CPKITCH,0,No upgrade
+CPKITCH,1,Upgraded kitchen facilities
+CPOTHUSC,0,No upgrade
+CPOTHUSC,1,Other capital improvements or upgrades - specify
+CPPLAYGR,0,No upgrade
+CPPLAYGR,1,Upgraded playground or play area
+CPPLUMB,0,No upgrade
+CPPLUMB,1,Upgraded plumbing system
+CPROOF,0,No upgrade
+CPROOF,1,Upgraded roof
+CPSECSYS,0,No upgrade
+CPSECSYS,1,Upgraded security system
+CPSWIM,0,No upgrade
+CPSWIM,1,Upgraded swimming pool
+CPWINDOW,0,No upgrade
+CPWINDOW,1,Upgraded windows
+CROSSCOLL,-9,Not reported
+CROSSCOLL,-8,Not applicable
+CROSSCOLL,1,Yes
+CROSSCOLL,2,No
+CROSSCOLL,3,Don't know
+DEBT,1,Yes
+DEBT,2,No
+DIFFLOAN,-9,Not reported
+DIFFLOAN,-8,Not applicable
+DIFFLOAN,1,Balloon payment
+DIFFLOAN,2,Fully amortized
+DKSUBSDZ,-9,Not reported
+DKSUBSDZ,1,Yes (Don’t know if subsidized)
+ECONDEVLP,-9,Not reported
+ECONDEVLP,1,Yes
+ECONDEVLP,2,No
+ECONDEVLP,3,Don't know
+ELDERLY,-9,Not reported
+ELDERLY,1,Yes
+FIXADJ,-9,Not reported
+FIXADJ,-8,Not applicable
+FIXADJ,1,"A fixed-rate, level payment"
+FIXADJ,2,An adjustable rate mortgage (ARM)
+FOVER20BLD,-9,Not reported
+FOVER20BLD,-8,Not applicable
+FOVER20BLD,1,Yes
+GOVBELOW,-9,Not reported
+GOVBELOW,1,Yes
+GOVGRANT,-9,Not reported
+GOVGRANT,1,Yes
+GUARANTEE,-9,Not reported
+GUARANTEE,-8,Not applicable
+GUARANTEE,1,Yes
+GUARANTEE,2,No
+GUARANTEE,3,Don't know
+HISTORIC,-9,Not reported
+HISTORIC,1,Yes
+HISTORIC,2,No
+HISTORIC,3,Don't know
+HOWMVAL,-9,Not reported
+HOWMVAL,1,Local tax assessment of this property
+HOWMVAL,2,Recent real estate appraisal
+HOWMVAL,3,Insurance replacement cost
+HOWMVAL,4,Original purchase price plus inflation
+HOWMVAL,5,Original purchase price plus improvements and inflation
+HOWMVAL,6,Selling or asking price of similar properties
+HOWMVAL,7,Capitalization of current rental revenues
+HOWMVAL,8,Other - Specify
+IELEC,-9,Not reported
+IELEC,1,Yes
+IELEC,2,No
+IELEC,3,Not Present
+IFITNESS,-9,Not reported
+IFITNESS,1,Yes
+IFITNESS,2,No
+IFITNESS,3,Not Present
+IGAS,-9,Not reported
+IGAS,1,Yes
+IGAS,2,No
+IGAS,3,Not Present
+ILAUNDRY,-9,Not reported
+ILAUNDRY,1,Yes
+ILAUNDRY,2,No
+ILAUNDRY,3,Not Present
+INSURED2,-9,Not reported
+INSURED2,-8,Not applicable
+INSURED2,1,Federal Housing Administration (FHA)?
+INSURED2,2,Department of Veterans Affairs (VA)?
+INSURED2,3,Rural Housing Service/Rural Development (formerly FmHA)?
+INSURED2,4,None of the above
+INSURED3,-9,Not reported
+INSURED3,-8,Not applicable
+INSURED3,1,Federal Housing Administration (FHA)?
+INSURED3,2,Department of Veterans Affairs (VA)?
+INSURED3,3,Rural Housing Service/Rural Development (formerly FmHA)?
+INSURED3,4,None of the above
+INSURED4,-9,Not reported
+INSURED4,-8,Not applicable
+INSURED4,1,Federal Housing Administration (FHA)?
+INSURED4,2,Department of Veterans Affairs (VA)?
+INSURED4,3,Rural Housing Service/Rural Development (formerly FmHA)?
+INSURED4,4,None of the above
+IOTHFREE,-9,Not reported
+IOTHFREE,1,Yes
+IOTHFREE,2,No
+IOTHFREE,3,Not Present
+IPARKING,-9,Not reported
+IPARKING,1,Yes
+IPARKING,2,No
+IPARKING,3,Not Present
+IPOOL,-9,Not reported
+IPOOL,1,Yes
+IPOOL,2,No
+IPOOL,3,Not Present
+ITRASH,-9,Not reported
+ITRASH,1,Yes
+ITRASH,2,No
+ITRASH,3,Not Present
+IWATER,-9,Not reported
+IWATER,1,Yes
+IWATER,2,No
+IWATER,3,Not Present
+JCONTROL,-9,Not edited
+JCONTROL,1,Edited
+JEBT,-9,Not edited
+JEBT,1,Edited
+JEBTNUM,-9,Not edited
+JEBTNUM,1,Edited
+JECT8,-9,Not edited
+JECT8,1,Edited
+JECT8NUM,-9,Not edited
+JECT8NUM,1,Edited
+JEGPAY,-9,Not edited
+JEGPAY,1,Edited
+JERCCOMM,-9,Not edited
+JERCCOMM,1,Edited
+JIED2INX,-9,Not edited
+JIED2INX,1,Edited
+JIXADJ,-9,Not edited
+JIXADJ,1,Edited
+JOMMSPACE,-9,Not edited
+JOMMSPACE,1,Edited
+JONCSS,-9,Not edited
+JONCSS,1,Edited
+JORTAMT,-9,Not edited
+JORTAMT,1,Edited
+JORTGAGE,-9,Not edited
+JORTGAGE,1,Edited
+JOUCHER,-9,Not edited
+JOUCHER,1,Edited
+JOUCHNUM,-9,Not edited
+JOUCHNUM,1,Edited
+JPACCESS,-9,Not edited
+JPACCESS,1,Edited
+JPBATH,-9,Not edited
+JPBATH,1,Edited
+JPDOOR,-9,Not edited
+JPDOOR,1,Edited
+JPELESYS,-9,Not edited
+JPELESYS,1,Edited
+JPEXTER,-9,Not edited
+JPEXTER,1,Edited
+JPFLOOR,-9,Not edited
+JPFLOOR,1,Edited
+JPHEAT,-9,Not edited
+JPHEAT,1,Edited
+JPHEATAMT,-9,Not edited
+JPHEATAMT,1,Edited
+JPIOTH,-9,Not edited
+JPIOTH,1,Edited
+JPIOTH2,-9,Not edited
+JPIOTH2,1,Edited
+JPIOTH3,-9,Not edited
+JPIOTH3,1,Edited
+JPIOTH4,-9,Not edited
+JPIOTH4,1,Edited
+JPKITCH,-9,Not edited
+JPKITCH,1,Edited
+JPOTHUSC,-9,Not edited
+JPOTHUSC,1,Edited
+JPPLAYGR,-9,Not edited
+JPPLAYGR,1,Edited
+JPPLUMB,-9,Not edited
+JPPLUMB,1,Edited
+JPPVAL,-9,Not edited
+JPPVAL,1,Edited
+JPROOF,-9,Not edited
+JPROOF,1,Edited
+JPSECSYS,-9,Not edited
+JPSECSYS,1,Edited
+JPSWIM,-9,Not edited
+JPSWIM,1,Edited
+JPWINDOW,-9,Not edited
+JPWINDOW,1,Edited
+JRMORT,-9,Not edited
+JRMORT,1,Edited
+JRNEWBLG,-9,Not edited
+JRNEWBLG,1,Edited
+JROLDBLG,-9,Not edited
+JROLDBLG,1,Edited
+JROPOUT,-9,Not edited
+JROPOUT,1,Edited
+JROPTYPE,-9,Not edited
+JROPTYPE,1,Edited
+JRPROPACQ,-9,Not edited
+JRPROPACQ,1,Edited
+JRSMNGMNT,-9,Not edited
+JRSMNGMNT,1,Edited
+JTHEXP,-9,Not edited
+JTHEXP,1,Edited
+JTHTRSRY,-9,Not edited
+JTHTRSRY,1,Edited
+LINECRDT,-9,Not reported
+LINECRDT,-8,Not applicable
+LINECRDT,1,Yes
+LINECRDT,2,No
+LOWINAREA,-9,Not reported
+LOWINAREA,1,Yes
+LOWINAREA,2,No
+LOWINAREA,3,Don't know
+LOWINCTC,-9,Not reported
+LOWINCTC,1,Yes
+LOWINCTEN,-9,Not reported
+LOWINCTEN,1,Yes
+LOWINCTEN,2,No
+LOWINCTEN,3,Don't know
+MNGMNT,-9,Not reported
+MNGMNT,1,Property owner or unpaid agent of owner (such as a family member)
+MNGMNT,2,Management agent directly employed by owner
+MNGMNT,3,Management company
+MNGMNT,4,Other
+MOREPROPS,-9,Not reported
+MOREPROPS,-8,Not applicable
+MOREPROPS,1,Yes
+MOREPROPS,2,No
+MOREPROPS,3,Don't know
+MORTGAGE,-9,Not reported
+MORTGAGE,-8,Not applicable
+MORTGAGE,1,Yes
+MORTGAGE,2,No
+MORTGET,-9,Not reported
+MORTGET,-8,Not applicable
+MORTGET,1,Commercial bank or trust company
+MORTGET,2,"Savings and loan association, federal savings bank, mutual savings bank"
+MORTGET,3,Life insurance company
+MORTGET,4,Mortgage bank or mortgage company
+MORTGET,5,Real Estate Investment Trust (REIT)
+MORTGET,6,Pension fund or retirement fund
+MORTGET,7,Credit union
+MORTGET,8,"Finance company (including consumer discount company, industrial bank, cooperative bank)"
+MORTGET,9,State or municipal government
+MORTGET,10,State or local housing finance agency
+MORTGET,11,Individual or individual's estate
+MORTGET,12,Other-specify
+MORTGET,13,Don't know
+MORTKIND,-9,Not reported
+MORTKIND,-8,Not applicable
+MORTKIND,1,A new mortgage that was placed when this property was acquired?
+MORTKIND,2,A refinancing of a previous loan?
+MORTKIND,3,A mortgage placed on a property previously owned free and clear of debt?
+MORTKIND,4,A construction loan converted to permanent financing?
+MORTKIND,5,The same mortgage that was assumed from the previous owner when this property was acquired?
+MORTPAY,-9,Not reported
+MORTPAY,-8,Not applicable
+MORTPAY,1,Commercial bank or trust company
+MORTPAY,2,"Savings and loan association, federal savings bank, mutual savings bank"
+MORTPAY,3,Mortgage bank or mortgage company
+MORTPAY,4,Life insurance company
+MORTPAY,5,Private mortgage pool
+MORTPAY,6,Loan servicing company
+MORTPAY,7,Credit union
+MORTPAY,8,"Finance company (including consumer discount company, industrial bank, cooperative bank)"
+MORTPAY,9,State or municipal government
+MORTPAY,10,State or local housing finance agency
+MORTPAY,11,Individual or individual's estate
+MORTPAY,12,Other - Specify
+MORTPAY,13,Don't know
+MRKTINX,-9,Not reported
+MRKTINX,-8,Not applicable
+MRKTINX,1,Treasury rate
+MRKTINX,2,LIBOR
+MRKTINX,3,Prime rate
+MRKTINX,4,11th District cost-of-fund index
+MRKTINX,5,National average cost of funds
+MRKTINX,6,OTS contract mortgage rates
+MRKTINX,7,Adjustment not based on index
+MRKTINX,8,Other-specify
+NOTSUBSDZ,-9,Not reported
+NOTSUBSDZ,-8,Not applicable
+NOTSUBSDZ,1,Yes (not subsidized)
+NUMBLD_R,-9,Not reported
+NUMBLD_R,1,1 building
+NUMBLD_R,2,2 buildings
+NUMBLD_R,3,3 buildings
+NUMBLD_R,4,4 buildings
+NUMBLD_R,5,5 buildings
+NUMBLD_R,6,6 buildings
+NUMBLD_R,7,7 buildings
+NUMBLD_R,8,8 buildings
+NUMBLD_R,9,9 buildings
+NUMBLD_R,10,10 buildings
+NUMBLD_R,11,11 buildings
+NUMBLD_R,12,12 buildings
+NUMBLD_R,13,13 buildings
+NUMBLD_R,14,14 buildings
+NUMBLD_R,15,15 buildings
+NUMBLD_R,16,16 buildings
+NUMBLD_R,17,17 buildings
+NUMBLD_R,18,18 buildings
+NUMBLD_R,19,19 buildings
+NUMBLD_R,20,20 or more buildings
+NUMCAT_R,-9,Not reported
+NUMCAT_R,1,2 to 4 units
+NUMCAT_R,2,5 to 24 units
+NUMCAT_R,3,25 to 49 units
+NUMCAT_R,4,50 or more units
+OPTAX_R,-9,Not reported
+OPTAX_R,0,0
+OPTAX_R,1,1 to 499
+OPTAX_R,2,500 to 999
+OPTAX_R,3,1000 to 1749
+OPTAX_R,4,1750 to 2499
+OPTAX_R,5,2500 to 3249
+OPTAX_R,6,3250 to 3999
+OPTAX_R,7,4000 to 4999
+OPTAX_R,8,5000 to 5999
+OPTAX_R,9,6000 to 6999
+OPTAX_R,10,7000 to 9999
+OPTAX_R,11,10000 to 17499
+OPTAX_R,12,17500 to 24999
+OPTAX_R,13,25000 to 37499
+OPTAX_R,14,37500 to 49999
+OPTAX_R,15,50000 to 74999
+OPTAX_R,16,75000 to 149999
+OPTAX_R,17,150000 to 299999
+OPTAX_R,18,300000 or more
+OTHLOAN,-9,Not reported
+OTHLOAN,-8,Not applicable
+OTHLOAN,1,Yes
+OTHLOAN,2,No
+OTHRCV,-9,Not reported
+OTHRCV,1,Yes
+OTHRCV,2,No
+OUTCOME,501,Interview complete
+OUTCOME,503,Sufficient partial - No follow up needed
+OUTCOME,504,"Sufficient partial - ""Must have"" interview"
+OUTCOME,513,Language problem
+OUTCOME,514,Unable to locate
+OUTCOME,515,Insufficient partial
+OUTCOME,516,No one available
+OUTCOME,517,Temporarily absent
+OUTCOME,518,Refusal
+OUTCOME,519,Type A - Other
+OUTCOME,520,Type A - Congressional or Hard Refusal
+OUTCOME,521,Sample property is financed under another sample property's financing
+OUTCOME,522,Sample property is operated by public housing
+OUTCOME,524,Sample property is condo or % of rentals below minimum requirement
+OUTCOME,529,Under construction - not ready
+OUTCOME,533,Type B Noninterview - Other
+OUTCOME,540,Demolished
+OUTCOME,541,Sample property is a manufactured housing community
+OUTCOME,543,Converted to a permanent business or storage
+OUTCOME,546,Duplicate
+OUTCOME,547,Type C Noninterview-Other
+OWNENT,-9,Not reported
+OWNENT,-9,Not reported
+OWNENT,1,"Individual investor, including joint ownership by two or more individuals, such as husband and wife"
+OWNENT,2,Trustee for estate
+OWNENT,3,Limited liability partnership
+OWNENT,4,Limited liability company
+OWNENT,5,Tenant in common
+OWNENT,6,General partnership
+OWNENT,7,Real Estate Investment Trust (REIT)
+OWNENT,8,Life insurance company
+OWNENT,9,Financial institution other than life insurance company
+OWNENT,10,Pension fund or retirement fund
+OWNENT,11,Real estate corporation
+OWNENT,12,Corporation other than real estate corporation
+OWNENT,13,Housing cooperative organization or stock cooperative
+OWNENT,14,"Nonprofit organization (including religious institution, labor union, or fraternal organization)"
+OWNENT,15,Other kind of institution - Specify
+PBS8V,-9,Not reported
+PBS8V,1,Yes
+PBS8V,2,No
+PBS8V,3,Don't know
+PMTFREQ,-9,Not reported
+PMTFREQ,-8,Not applicable
+PMTFREQ,1,Biweekly (every 2 weeks)
+PMTFREQ,2,Monthly
+PMTFREQ,3,Quarterly
+PMTFREQ,4,Other-specify
+PMTFREQ2,-9,Not reported
+PMTFREQ2,-8,Not applicable
+PMTFREQ2,1,Biweekly
+PMTFREQ2,2,Monthly
+PMTFREQ2,3,Quarterly
+PMTFREQ2,4,Other - Specify below
+PMTFREQ3,-9,Not reported
+PMTFREQ3,-8,Not applicable
+PMTFREQ3,1,Biweekly
+PMTFREQ3,2,Monthly
+PMTFREQ3,3,Quarterly
+PMTFREQ3,4,Other - Specify below
+PMTFREQ4,-9,Not reported
+PMTFREQ4,-8,Not applicable
+PMTFREQ4,1,Biweekly
+PMTFREQ4,2,Monthly
+PMTFREQ4,3,Quarterly
+PMTFREQ4,4,Other - Specify below
+PRIVATE,-9,Not reported
+PRIVATE,1,Yes
+PROPOUT,-9,Not reported
+PROPOUT,1,Operated by a public housing authority
+PROPOUT,2,A manufactured housing community (prefabricated housing / mobile homes)?
+PROPOUT,3,None of the above
+PROPTYPE,-9,Not reported
+PROPTYPE,-8,Not applicable
+PROPTYPE,1,"A residential property with 2 to 4 units, all of which are RENTAL UNITS?"
+PROPTYPE,2,"A residential property with 5 or more units, of which 80% or more are RENTAL UNITS and commonly owned/financed?"
+PROPTYPE,3,Some other type of rental property?
+REGPAY,-9,Not reported
+REGPAY,-8,Not applicable
+REGPAY,1,Yes
+REGPAY,2,No
+RPIINT,-9,Not reported
+RPIINT,-8,Not applicable
+RPIINT,1,Interest included
+RPIINT2,-9,Not reported
+RPIINT2,-8,Not applicable
+RPIINT2,1,Yes
+RPIINT3,-9,Not reported
+RPIINT3,-8,Not applicable
+RPIINT3,1,Yes
+RPIINT4,-9,Not reported
+RPIINT4,-8,Not applicable
+RPIINT4,1,Yes
+RPIOTH,-9,Not reported
+RPIOTH,-8,Not applicable
+RPIOTH,1,Yes
+RPIOTH2,-9,Not reported
+RPIOTH2,-8,Not applicable
+RPIOTH2,1,Yes
+RPIOTH3,-9,Not reported
+RPIOTH3,-8,Not applicable
+RPIOTH3,1,Yes
+RPIOTH4,-9,Not reported
+RPIOTH4,-8,Not applicable
+RPIOTH4,1,Yes
+RPIPMI,-9,Not reported
+RPIPMI,-8,Not applicable
+RPIPMI,1,Yes
+RPIPRIN,-9,Not reported
+RPIPRIN,-8,Not applicable
+RPIPRIN,1,Yes
+RPIPRIN2,-9,Not reported
+RPIPRIN2,-8,Not applicable
+RPIPRIN2,1,Yes
+RPIPRIN3,-9,Not reported
+RPIPRIN3,-8,Not applicable
+RPIPRIN3,1,Yes
+RPIPRIN4,-9,Not reported
+RPIPRIN4,-8,Not applicable
+RPIPRIN4,1,Yes
+RPIPRPINS,-9,Not reported
+RPIPRPINS,-8,Not applicable
+RPIPRPINS,1,Yes
+RPIPRPTAX,-9,Not reported
+RPIPRPTAX,-8,Not applicable
+RPIPRPTAX,1,Yes
+RSUBSIDY,-9,Not reported
+RSUBSIDY,1,Yes
+SECT8,-9,Not reported
+SECT8,1,Yes
+SECT8,2,No
+SECT8,3,Don't know
+SENIOR,-9,Not reported
+SENIOR,1,Yes
+SENIOR,2,No
+TAXDEPREC,-9,Not reported
+TAXDEPREC,-8,Not applicable
+TAXDEPREC,1,Yes
+TIED2INX,-9,Not reported
+TIED2INX,-8,Not applicable
+TIED2INX,1,Yes
+TIED2INX,2,No
+TXCREDIT,-9,Not reported
+TXCREDIT,1,Yes
+VOUCHER,-9,Not reported
+VOUCHER,1,Yes
+VOUCHER,2,No
+VOUCHER,3,Don't know
+WHYNOMRT,-9,Not reported
+WHYNOMRT,-8,Not applicable
+WHYNOMRT,1,I prefer not to carry any debt on this property or do not want a mortgage
+WHYNOMRT,2,"I have tried to get a mortgage, but was denied"
+WHYNOMRT,3,Other – Specify
+YRMORT1_R,-9,Not reported
+YRMORT1_R,-8,Not applicable
+YRMORT1_R,1,1960 to 1979
+YRMORT1_R,2,1980 to 1989
+YRMORT1_R,3,1990 to 1999
+YRMORT1_R,4,2000 to 2004
+YRMORT1_R,5,2005 to 2006
+YRMORT1_R,6,2007 to 2008
+YRMORT1_R,7,2009 to 2010
+YRMORT1_R,8,2011 to 2012
+YRMORT2_R,-9,Not reported
+YRMORT2_R,-8,Not applicable
+YRMORT2_R,1,1995 or earlier
+YRMORT2_R,2,1996 to 2007
+YRMORT2_R,3,2007 to 2012
+YRMORT3_R,-9,Not reported
+YRMORT3_R,-8,Not applicable
+YRMORT3_R,1,1995 or earlier
+YRMORT3_R,2,1996 to 2007
+YRMORT3_R,3,2007 to 2012
+YRMORT4_R,-8,Not applicable
+YRMORT4_R,-8,Not applicable
+YRMORT4_R,1,1995 or earlier
+YRMORT4_R,2,1996 to 2007
+YRMORT4_R,3,2007 to 2012
+YRNEWBLG_R,-9,Not reported
+YRNEWBLG_R,1,1959 or earlier
+YRNEWBLG_R,2,1960 to 1969
+YRNEWBLG_R,3,1970 to 1979
+YRNEWBLG_R,4,1980 to 1989
+YRNEWBLG_R,5,1990 to 1999
+YRNEWBLG_R,6,2000 to 2004
+YRNEWBLG_R,7,2005 to 2006
+YRNEWBLG_R,8,2007 to 2008
+YRNEWBLG_R,9,2009 to 2010
+YRNEWBLG_R,10,2011 to 2012
+YROLDBLG_R,-9,Not reported
+YROLDBLG_R,1,1919 or earlier
+YROLDBLG_R,2,1920 to 1939
+YROLDBLG_R,3,1940 to 1959
+YROLDBLG_R,4,1960 to 1969
+YROLDBLG_R,5,1970 to 1979
+YROLDBLG_R,6,1980 to 1989
+YROLDBLG_R,7,1990 to 1999
+YROLDBLG_R,8,2000 to 2004
+YROLDBLG_R,9,2005 to 2006
+YROLDBLG_R,10,2007 to 2008
+YROLDBLG_R,11,2009 to 2010
+YROLDBLG_R,12,2011 to 2012
+YRPROPACQ_R,-9,Not reported
+YRPROPACQ_R,1,1969 or earlier
+YRPROPACQ_R,2,1970 to 1979
+YRPROPACQ_R,3,1980 to 1989
+YRPROPACQ_R,4,1990 to 1999
+YRPROPACQ_R,5,2000 to 2004
+YRPROPACQ_R,6,2005 to 2006
+YRPROPACQ_R,7,2007 to 2008
+YRPROPACQ_R,8,2009 to 2010
+YRPROPACQ_R,9,2011 to 2012
