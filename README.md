@@ -4,14 +4,17 @@ The purpose of this project is to process and analyze landlord finances using pu
 Raw data are contained in the `data/` directory of this project. They are downloaded in CSV format from the [Census Bureau's webpage for the Rental Housing Finance Survey](https://www.census.gov/programs-surveys/rhfs/data.html). 
 
 ## 2012
-2012 data are located in `data/2012_RHFS_National_PUF_CSV_v2.1` and were obtained by
+2012 data are located in `data/2012` and were obtained by
 downloading the [2012 RHFS National Microdata CSV](https://www.census.gov/programs-surveys/rhfs/data/puf/2012/microdata.html). Unlike
 other years, they are split into 5 files. Documentation for these files and the survey
 variables can be found in the [2012 RHFS Codebook](https://www.census.gov/programs-surveys/rhfs/data/puf/2012/2012-codebook.html).
+The codebook is also saved within the directory.
 
 ## 2021
-2021 data are located in `data/rhfspuf2021_v1_1.csv` and were obtained by downloading
-the [2021 RHFS Microdata CSV](https://www.census.gov/programs-surveys/rhfs/data/puf/2021/microdata.html).
+2021 data are located in `data/2021` and were obtained by downloading
+the [2021 RHFS Microdata CSV](https://www.census.gov/programs-surveys/rhfs/data/puf/2021/microdata.html). Documentation
+for this CSV file and the survey variables can be found in the [2021 RHRS Codebook](https://www.census.gov/programs-surveys/rhfs/data/puf/2021/2021-codebook.html).
+The codebook is also saved within the directory.
 
 # Potential variables of interest
 CONTROLPUF, 
