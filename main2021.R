@@ -1,3 +1,5 @@
+# This script is meant to read in and perform basic analytics on the 2021 RHFS data.
+
 library(dplyr)
 library(glue)
 
