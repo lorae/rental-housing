@@ -5,10 +5,11 @@ Raw data are contained in the `data/` directory of this project. They are downlo
 
 ## 2012
 2012 data are located in `data/2012` and were obtained by
-downloading the [2012 RHFS Microdata ZIP file](https://www.census.gov/programs-surveys/rhfs/data/puf/2012/microdata.html). Unlike
-other years, they are split into 5 files. Documentation for these files and the survey
-variables can be found in the [2012 RHFS Codebook](https://www.census.gov/programs-surveys/rhfs/data/puf/2012/2012-codebook.html).
+downloading the [2012 RHFS National Microdata CSV files as a ZIP file](https://www.census.gov/programs-surveys/rhfs/data/puf/2012/microdata.html) and then extracting the contents. Unlike other years, they are split into 5 files. Documentation for these files and the survey variables can be found in the [2012 RHFS Codebook](https://www.census.gov/programs-surveys/rhfs/data/puf/2012/2012-codebook.html).
 The codebook is also saved within the directory.
+
+## 2015 
+2015 data are located in `data/2015  and were obtained by downloading the [2015 RHFS Microdata CSV](https://www.census.gov/programs-surveys/rhfs/data/puf/2015/microdata.html). Documentation for this CSV file and the survey variables can be found in the [2015 RHFS Codebook](https://www.census.gov/programs-surveys/rhfs/data/puf/2015/2015-codebook.html). The codebook is also saved within the directory.
 
 ## 2018
 2018 data are located in `data/2018` and were obtained by downloading the [2018 RHFS Microdata CSV](https://www.census.gov/programs-surveys/rhfs/data/puf/2018/microdata.html). Documentation for this CSV file and the survey variables can be found in the [2018 RHFS Codebook](https://www.census.gov/programs-surveys/rhfs/data/puf/2018/2015-codebook.html). The codebook is also saved within the directory.
