@@ -1,0 +1,35 @@
+---
+title: "Rental Housing Finance Survey Response Rate Evaluation"
+author: Lorae Stojanovic
+date: March 4, 2025
+---
+
+```{r setup, include = FALSE}
+library(dplyr)
+library(knitr)
+```
+
+The purpose of the document is to evaluate response rates in the 2012, 2015, 2018, and 2021 waves of the Rental Housing Finance Survey (RHFS).
+
+# Response Rates
+The RHFS is administered every 3 years such that a random geographically-representative sample of 
+
+```{r table01, echo = FALSE}
+# These numbers are hard coded since they come directly from the documentation
+complete_interview <- tibble(
+  year = c(2012, 2015, 2018, 2021),
+  sampled = c(4030, 10257, 11338, 11510),
+  interviewed = c(2260, 3896, 4330, 5106)
+) |>
+  mutate(
+    prop = interviewed/sampled * 100
+  )
+
+# Display the tibble as a formatted table with improved column headers
+kable(
+  complete_interview, 
+  digits = 0, 
+  caption = "Table 1: Response Rates in 2012, 2015, 2018, and 2021 Waves",
+  col.names = c("Wave", "Sample Size", "Completed Interviews", "Complete Interview Rate (%)")
+)
+```
