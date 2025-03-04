@@ -23,9 +23,14 @@ geographically-representative sample of
 
 Detailed notes about survey design follow.
 
-## 2012 [Methodology Page](https://www.census.gov/programs-surveys/rhfs/technical-documentation/methodology.2012.html#list-tab-2013961092)
+## 2012 Methodology
 
-**Target Population**: All possible residential rental population in the
+All material from this section is based upon the [2012 RHFS National
+Methodology, Weighting, and Error
+Estimation](https://www.census.gov/programs-surveys/rhfs/technical-documentation/methodology.2012.html#list-tab-2013961092)
+file.
+
+**Target Population**: All possible residential rental properties in the
 United States (in 2012)?
 
 **Universe sampled**: The Basic Street Address (BSA) is the street
@@ -53,7 +58,44 @@ PSU.
     stratum to represent all PSUs in that stratum.
 2.  Within each PSU, BSAs with at least 80% of units identified as
     rental units in the 2010 census are classified as in-scope. These
-    BSAs are divided into 8 strata, shown in Table 2.
+    BSAs are divided into 8 groups, shown in Table 2. (Note: These
+    groups are also called “strata” by the Census Bureau, but they
+    differ from the strata grouping PSUs in step 1.) From within each of
+    these 8 strata, a random sample is selected. In total, **4,030**
+    BSAs were selected for participation in the 2012 RHFS.
 
 **Table 2: 2012 RHFS Sample Size by Stratum**
 ![table02](docs/table02.png)
+
+**Sample refinement**: The target population for the survey is rental
+*properties*, not BSAs. A *property* is defined as “A BSA or a
+collection of BSAs and/or other buildings owned by a single entity
+(person, group, leasing company, and so on). For example, an apartment
+complex may have several buildings with unique BSAs, but they are owned
+as one property.” Properties known to have multiple BSAs are reweighted
+to account for their increased probability of selection in the sample.
+
+Even after sample selection, it is not guaranteed that all BSAs selected
+will be eligible for the survey. For example:
+
+- Multiple sampled BSAs may match the same property: In this case, data
+  are still collected on the property, but the data are collapsed so
+  that there is only one row.
+- Property was public housing
+- Property is found to not contain a minimum of 80% rental units
+- Building found at BSA is under construction or demolished
+- BSA belongs to a manufactured housing community
+
+After this stage of refinement, **3,467** BSAs remained in the sample.
+\[As far as I can intuit from the documentation, at this stage, each BSA
+is assumed to represent a separate property. However, I am not sure
+about that.\]
+
+**Noninterviews**: Of 3,467 BSAs, **2,264** were interviewed and
+**1,203** were classified as “Type A” noninterviews: either “(1) no one
+was available for data collection after repeated visits, (2) the
+respondent refused to be interviewed, or (3) the interviewer was unable
+to find the address.”
+
+This amounts to an unweighted response rate of 65%, or a weighted
+property-level response rate of 67%.
