@@ -1,7 +1,7 @@
 ---
 title: "Rental Housing Finance Survey Response Rate Evaluation"
 date: March 4, 2025
-output: github_document
+output: html_document
 ---
 
 ```{r setup, include = FALSE}
@@ -40,6 +40,28 @@ Detailed notes about survey design follow.
 ## 2012 Methodology
 
 All material from this section is based upon the [2012 RHFS National Methodology, Weighting, and Error Estimation](https://www.census.gov/programs-surveys/rhfs/technical-documentation/methodology.2012.html#list-tab-2013961092) file.
+
+```{r flowchart, echo=FALSE, out.width='100%', out.height='100%'}
+library(DiagrammeR)
+
+DiagrammeR::grViz("
+digraph flowchart {
+  rankdir=LR;  // Left to Right Flow
+
+  // Reduce whitespace
+  graph [pad=0.1, nodesep=0.3, ranksep=0.1]
+
+  node [shape=rectangle, style=filled, fillcolor=lightblue, fontname=Arial, width=1.5, height=0.6];
+
+  total_bsas [label='Total Eligible BSAs\n2,704,708'];
+  sampled_bsas [label='Sampled BSAs\n4,030'];
+  refined_sample [label='Refined Sample\n3,467'];
+  completed_interview [label='Completed Interviews\n2,264'];
+
+  total_bsas -> sampled_bsas -> refined_sample -> completed_interview;
+}
+")
+```
 
 **Target Population**: All possible residential rental properties in the United States (in 2012)?
 
