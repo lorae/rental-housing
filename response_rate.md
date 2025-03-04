@@ -10,14 +10,14 @@ The purpose of the document is to evaluate response rates in the 2012,
 The RHFS is administered every 3 years such that a random
 geographically-representative sample of
 
+**Table 1: Response Rates in 2012, 2015, 2018, and 2021 Waves**
+
 | Wave | Sample Size | Completed Interviews | Complete Interview Rate (%) |
 |-----:|------------:|---------------------:|----------------------------:|
 | 2012 |        4030 |                 2260 |                          56 |
 | 2015 |       10257 |                 3896 |                          38 |
 | 2018 |       11338 |                 4330 |                          38 |
 | 2021 |       11510 |                 5106 |                          44 |
-
-Table 1: Response Rates in 2012, 2015, 2018, and 2021 Waves
 
 # Survey design
 
@@ -40,10 +40,9 @@ is the BSA.”
 
 This selection comprises the universe of potentially sampled BSAs.
 
-**Sample selection**
-
-The sample selection is hierarchical: First, Primary Sampling Units
-(PSUs) are selected. Then, BSAs are selected within each PSU.
+**Sample selection**: The sampling process has two steps. First, Primary
+Sampling Units (PSUs) are selected. Then, BSAs are selected within each
+PSU.
 
 1.  The United States is divided into 394 Primary Sampling Units (PSUs),
     which are geographical boundaries that collectively cover all 50
@@ -56,10 +55,5 @@ The sample selection is hierarchical: First, Primary Sampling Units
     rental units in the 2010 census are classified as in-scope. These
     BSAs are divided into 8 strata, shown in Table 2.
 
-# Sample Size by Stratum
-
-<figure>
-<img src="" alt="Table 2: 2012 RHFS Sample Size by Stratum" />
-<figcaption aria-hidden="true">Table 2: 2012 RHFS Sample Size by
-Stratum</figcaption>
-</figure>
+**Table 2: 2012 RHFS Sample Size by Stratum**
+![table02](docs/table02.png)
