@@ -1,3 +1,9 @@
+# The report is live!
+
+🏘️Read it [here](response_rate.md).
+(Still a work in progress).
+
+# About
 The purpose of this project is to process and analyze landlord finances using publicly available data from the U.S. Census Bureau's Rental Housing Finance Survey.
 
 # Data sources
