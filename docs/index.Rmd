@@ -3,10 +3,52 @@ title: "Rental Housing Finance Survey Response Rate Evaluation"
 date: March 5, 2025
 output: html_document
 ---
-
 ```{r setup, include = FALSE}
 library(dplyr)
 library(knitr)
+library(htmltools)
+```
+
+```{r sidebar, echo=FALSE, results='asis'}
+# Floating sidebar with hyperlinked sections
+HTML('
+<style>
+#sidebar {
+    position: fixed;
+    left: 10px;
+    top: 100px;
+    width: 200px;
+    padding: 10px;
+    background: #f8f9fa;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+#sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #007bff;
+    padding: 4px 0;
+}
+#sidebar a:hover {
+    text-decoration: underline;
+}
+</style>
+
+<div id="sidebar">
+    <strong>Navigation</strong>
+    <ul>
+        <li><a href="#section1">Section 1: Detailed Survey Methodology</a></li>
+        <li><a href="#section2">Section 2: Response Rates</a></li>
+        <li><a href="#section3">Section 3: Sample Selection</a></li>
+        <li><a href="#section4">Section 4: Conclusion</a></li>
+    </ul>
+</div>
+')
 ```
 
 This report assesses whether the Rental Housing Finance Survey (RHFS) response rates are high enough to draw nationally-representative conclusions about U.S. landlord finances. It evaluates the 2012, 2015, 2018, and 2021 waves of the survey.
@@ -40,7 +82,8 @@ kable(
 )
 ```
 
-# Survey design
+# Section 1: Detailed Survey Methodology {#section1}
+
 Detailed notes about survey design follow.
 
 Unresolved question: Does the 2012 RHFS only include 2+ unit rental housing properties? It appears that the 2015 wave includes 1+ unit properties.
@@ -251,3 +294,12 @@ In total, **11,510** [what?]s were selected for participation in the 2021 RHFS. 
 ![table05](supporting_files/table05.png)
 
 **Noninterviews**: Of the **10,596** eligible cases, **5,210** complete interviews were conducted.
+
+# Section 2: Response Rates {#section2}
+placeholder
+
+# Section 3: Sample Selection {#section3}
+placeholder
+
+# Section 4: Conclusion {#section4}
+placeholder
