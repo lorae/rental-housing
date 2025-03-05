@@ -1,6 +1,6 @@
 # The report is live!
 
-🏘️Read it [here](response_rate.md).
+🏘️Read it [here](https://lorae.github.io/rental-housing/).
 (Still a work in progress).
 
 # About
