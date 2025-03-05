@@ -141,7 +141,7 @@ In total, **10,257** BSAs were selected for participation in the 2015 RHFS.
 
 **Table 3: 2015 RHFS Sample Size by Stratum**
 ![table03](docs/table03.png)
-**Sample refinement and Nonninterviews**: It's unclear how many of the 10,257 sample interviews were not completed due to ineligibility and how many were not completed due to nonresponse. Neither the technical documentation nor the PUF data itself provide information on this question.
+**Sample refinement and Noninterviews**: It's unclear how many of the 10,257 sample interviews were not completed due to ineligibility and how many were not completed due to nonresponse. Neither the technical documentation nor the PUF data itself provide information on this question.
 
 Note that if the attrition follows the 2012 sampling pattern, then we should expect that 3467/4030 or 86% of the sampled BSAs were eligible, meaning that roughly 1433 BSAs attritted due to ineligibility and 4937 BSAs attritted due to survey refusal, inability to find address, or inability to contact. This would imply an unweighted response rate of 44%.
 
@@ -150,3 +150,7 @@ If we instead extrapolate using the unweighted response rate of 65% in 2012, the
 In summary, using 2012 data, my best guess for the response rate among eligible properties is somewhere between 44% and 65%.
 
 TODO: email and ask what number of the 10,257 BSA interviews were not completed due to ineligible properties, and what number of the 10,257 BSA interviews were not completed due to inability to reach the respondent, and what number of the 10,257 BSAs sampled were not completed due to nonresponse / survey refusal. I've downloaded the PUF and that doesn't give any additional information: All the `OUTCOME` codes are 501, "Interview complete."
+
+**Other notes**: The technical documentation warns against comparing the results to the 2018 survey wave.
+
+*"Data users should exercise caution when making comparisons between the 2015 and 2018 Rental Housing Finance Survey estimates. The 2015 sample design used separate frames for single and multiunit addresses. Single unit rentals were selected from a frame of eligible rental units identified in the 2013 American Housing Survey (AHS) sample and multi-unit addresses were selected from a frame based on a list of basic street addresses on the Master Address File (MAF) located in 2013 AHS sample Primary Sampling Units (PSUs).  The 2018 sample design used a single frame based solely on addresses of rental units identified in the 2017 AHS.  The 2017 AHS was based on the new sample that was redesigned in 2015, while the 2013 AHS was based on the previous AHS sample design.  Thus, the poststratification of unit control totals had very different distributions across survey years. The differences between 2015 and 2018 RHFS estimates of rental properties can be largely attributed to the differences in the post-stratification of unit control totals and the increase in average property size as measured in units per property between the 2015 and 2018 RHFS sample designs."*
