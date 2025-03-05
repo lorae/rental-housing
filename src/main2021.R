@@ -5,7 +5,7 @@ library(glue)
 
 # Read in RHFS and do some exploratory analysis
 
-rhfs <- read.csv("data/rhfspuf2021_v1_1.csv")
+rhfs <- read.csv("data/2021/rhfspuf2021_v1_1.csv")
 
 # MORTAMT_R: Amount of original loan - 1st debt, recoded. All properties in scope 
 # where NUMCAT_R = '02', '03', or '04' (which indicates that there are 5 + units

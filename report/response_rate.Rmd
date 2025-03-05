@@ -186,11 +186,11 @@ digraph flowchart {
 
 **Universe sampled**: "Buildings with at least one unit that is either rented or [vacant-for-rent]," as identified in the 2017 AHS sample. Public housing units were removed using a Department of Housing and Urban Development administrative list.
 
-**Sample selection**: All rental units identified in the 2017 AHS sample the sampling process were part of the sampling frame, which contained 22,620 BSAs. Of those BSAs, 11,338 were selected for the RHFS sample. [As far as I am aware, this was a 2-step sampling process, like 2012 and 2015 waves of the RHFS: I believe the AHS sample is selected from PSUs, but I would have to externally corroborate.]
+**Sample selection**: All rental units identified in the 2017 AHS sample were part of the sampling frame, which contained 22,620 BSAs. Of those BSAs, 11,338 were selected for the RHFS sample. [As far as I am aware, this was a 2-step sampling process, like 2012 and 2015 waves of the RHFS: I believe the AHS sample is selected from PSUs, but I would have to externally corroborate.]
 
 As was the case in 2015, a high sample size was chosen. "This oversample was needed for three reasons;" writes the Census Bureau, "a high non-response rate, a large number of ineligible properties, and a large number of sampled units that changed strata after being selected from the frame." For some strata, like the 5-24 units and 25-49 units strata, the entire frame was selected,  since the target sample size exceeded the number of units in the frame.
 
-In total, **11,338** BSAs were selected for participation in the 2015 RHFS.
+In total, **11,338** BSAs were selected for participation in the 2018 RHFS.
 
 **Table 4: 2018 RHFS Sample Size by Stratum**
 ![table04](docs/table04.png)
@@ -198,3 +198,50 @@ In total, **11,338** BSAs were selected for participation in the 2015 RHFS.
 **Noninterviews**: Of the selected BSAs, the average rate of response was 64.3%. The methodology document does not specify whether this is weighted or unweighted percentage, but the 2012 survey had a similar response rate (65% unweighted, 67% weighted), so the difference is likely not substantive.
 
 Applying the interview rate to completed interviews, I estimate that (4,331 / 0.643) 6736 BSAs were eligible for interview.
+
+## 2021 Methodology
+
+All material from this section is based upon the [2021 Rental Housing Finance Survey Methodology](https://www.census.gov/programs-surveys/rhfs/technical-documentation/methodology.2021.html#list-tab-2013961092) file.
+
+**Figure 4: 2021 RHFS Survey Attrition**
+```{r fig04, echo=FALSE, out.width='100%', out.height='100%'}
+library(DiagrammeR)
+
+DiagrammeR::grViz("
+digraph flowchart {
+  rankdir=LR;  // Left to Right Flow
+
+  // Reduce whitespace
+  graph [pad=0.1, nodesep=0.3, ranksep=0.1]
+
+  node [shape=rectangle, style=filled, fillcolor=lightblue, fontname=Arial, width=1.5, height=0.6];
+
+  total_bsas [label='Total Eligible BSAs\nUnknown'];
+  sampled_bsas [label='Sampled BSAs\n11,510'];
+  eligible_sample [label='Eligible BSAs\n10,596'];
+  completed_interview [label='Completed\nProperty-Level\nInterviews\n5,210'];
+
+  total_bsas -> sampled_bsas -> eligible_sample -> completed_interview;
+}
+")
+```
+
+
+**Target Population**: All residential rental properties in the United States, "circa 2020."
+
+**Universe sampled**: All 2019 AHS sample units that were either rented, owner occupied and listed as "for sale or rent", or vacant-for-rent were eligible. The sampling unit is a building with at least one unit that is rented or vacant-for-rent.
+
+
+
+**Sample selection**: All rental units identified in the 2019 AHS sample were part of the sampling frame, which contained 31,739 units. Of those units, 11,510 were selected for the RHFS sample. [As far as I am aware, this was a 2-step sampling process, like 2012 and 2015 waves of the RHFS: I believe the AHS sample is selected from PSUs, but I would have to externally corroborate.]
+
+*"[T]he 2021 RHFS sample was selected from the 2019 AHS but surveyed in 2021. The 2019 AHS sample is selected in late calendar year 2018 and includes new housing units built and ready for occupancy as of late 2018. As such, the RHFS sample will not include any rental properties built between late 2018 and 2020. The total number of rental units in 2+ properties built in 2019 was 321,000 and the number built in 2020 was 348,000"*
+
+As was the case in 2015 and 2018, a high sample size was chosen. "This oversample was needed for three reasons;" writes the Census Bureau, "non-response, ineligible properties, and sampled units that changed strata after being selected from the frame." The entire frame was selected for the 25-49 units stratum because the target sample size exceeded the number of units in the frame.
+
+In total, **11,510** [what?]s were selected for participation in the 2021 RHFS. Of those sampled, **10,596** were identified as eligible after removing those with "missing owner information, duplicates, public housing status, or change in rental status."
+
+**Table 5: 2021 RHFS Sample Size by Stratum**
+![table05](docs/table05.png)
+
+**Noninterviews**: Of the **10,596** eligible cases, **5,210** complete interviews were conducted.
