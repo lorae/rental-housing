@@ -9,7 +9,7 @@ library(dplyr)
 library(knitr)
 ```
 
-The purpose of the document is to evaluate response rates in the 2012, 2015, 2018, and 2021 waves of the Rental Housing Finance Survey (RHFS).
+This report assesses whether the Rental Housing Finance Survey (RHFS) response rates are high enough to draw nationally-representative conclusions about U.S. landlord finances. It evaluates the 2012, 2015, 2018, and 2021 waves of the survey.
 
 # Response Rates
 The RHFS is administered every 3 years such that a random geographically-representative sample of 
