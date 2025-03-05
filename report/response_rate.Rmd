@@ -141,3 +141,12 @@ In total, **10,257** BSAs were selected for participation in the 2015 RHFS.
 
 **Table 3: 2015 RHFS Sample Size by Stratum**
 ![table03](docs/table03.png)
+**Sample refinement and Nonninterviews**: It's unclear how many of the 10,257 sample interviews were not completed due to ineligibility and how many were not completed due to nonresponse. Neither the technical documentation nor the PUF data itself provide information on this question.
+
+Note that if the attrition follows the 2012 sampling pattern, then we should expect that 3467/4030 or 86% of the sampled BSAs were eligible, meaning that roughly 1433 BSAs attritted due to ineligibility and 4937 BSAs attritted due to survey refusal, inability to find address, or inability to contact. This would imply an unweighted response rate of 44%.
+
+If we instead extrapolate using the unweighted response rate of 65% in 2012, then that would imply 3887 / 0.65 or 5980 BSAs were eligible, meaning that roughly 4277 BSAs attritted due to ineligibility and 2093 attritted due to survey refusal, inability to find address, or inability to contact.
+
+In summary, using 2012 data, my best guess for the response rate among eligible properties is somewhere between 44% and 65%.
+
+TODO: email and ask what number of the 10,257 BSA interviews were not completed due to ineligible properties, and what number of the 10,257 BSA interviews were not completed due to inability to reach the respondent, and what number of the 10,257 BSAs sampled were not completed due to nonresponse / survey refusal. I've downloaded the PUF and that doesn't give any additional information: All the `OUTCOME` codes are 501, "Interview complete."
