@@ -59,7 +59,7 @@ digraph flowchart {
   total_bsas [label='Total Eligible BSAs\n2,704,708'];
   sampled_bsas [label='Sampled BSAs\n4,030'];
   eligible_sample [label='Eligible BSAs\n3,467'];
-  completed_interview [label='Completed Interviews\n2,264'];
+  completed_interview [label='Completed\nProperty-Level\nInterviews\n2,264'];
 
   total_bsas -> sampled_bsas -> eligible_sample -> completed_interview;
 }
@@ -118,15 +118,15 @@ digraph flowchart {
 
   total_bsas [label='Total Eligible BSAs\n4,522,722'];
   sampled_bsas [label='Sampled BSAs\n10,257'];
-  eligible_sample [label='Eligible BSAs\n??'];
-  completed_interview [label='Completed Interviews\n3,887'];
+  eligible_sample [label='Eligible BSAs\nUnknown (best guess)\n5,980 - 8,824'];
+  completed_interview [label='Completed\nProperty-Level\nInterviews\n3,887'];
 
   total_bsas -> sampled_bsas -> eligible_sample -> completed_interview;
 }
 ")
 ```
 
-**Target Population**: All possible residential rental properties in the United States, "circa 2014."
+**Target Population**: All residential rental properties in the United States, "circa 2014."
 
 **Universe sampled**: Single and multi-unit rental housing properties from two sources ; the 2013 American Housing Survey Sample, which provides data on single unit rental housing properties, and the January 2014 Master Address File Extract Files (MAFXs), which provides data on multiunit properties. Public housing units were removed using a Department of Housing and Urban Development administrative list.
 
@@ -154,3 +154,47 @@ TODO: email and ask what number of the 10,257 BSA interviews were not completed 
 **Other notes**: The technical documentation warns against comparing the results to the 2018 survey wave.
 
 *"Data users should exercise caution when making comparisons between the 2015 and 2018 Rental Housing Finance Survey estimates. The 2015 sample design used separate frames for single and multiunit addresses. Single unit rentals were selected from a frame of eligible rental units identified in the 2013 American Housing Survey (AHS) sample and multi-unit addresses were selected from a frame based on a list of basic street addresses on the Master Address File (MAF) located in 2013 AHS sample Primary Sampling Units (PSUs).  The 2018 sample design used a single frame based solely on addresses of rental units identified in the 2017 AHS.  The 2017 AHS was based on the new sample that was redesigned in 2015, while the 2013 AHS was based on the previous AHS sample design.  Thus, the poststratification of unit control totals had very different distributions across survey years. The differences between 2015 and 2018 RHFS estimates of rental properties can be largely attributed to the differences in the post-stratification of unit control totals and the increase in average property size as measured in units per property between the 2015 and 2018 RHFS sample designs."*
+
+## 2018 Methodology
+
+All material from this section is based upon the [2018 Rental Housing Finance Survey Methodology](https://www.census.gov/programs-surveys/rhfs/technical-documentation/methodology.2018.html#list-tab-2013961092) file.
+
+**Figure 3: 2018 RHFS Survey Attrition**
+```{r fig03, echo=FALSE, out.width='100%', out.height='100%'}
+library(DiagrammeR)
+
+DiagrammeR::grViz("
+digraph flowchart {
+  rankdir=LR;  // Left to Right Flow
+
+  // Reduce whitespace
+  graph [pad=0.1, nodesep=0.3, ranksep=0.1]
+
+  node [shape=rectangle, style=filled, fillcolor=lightblue, fontname=Arial, width=1.5, height=0.6];
+
+  total_bsas [label='Total Eligible BSAs\nUnknown'];
+  sampled_bsas [label='Sampled BSAs\n11,338'];
+  eligible_sample [label='Eligible BSAs\nUnknown (best guess)\n6,736'];
+  completed_interview [label='Completed\nProperty-Level\nInterviews\n4,331'];
+
+  total_bsas -> sampled_bsas -> eligible_sample -> completed_interview;
+}
+")
+```
+
+**Target Population**: All residential rental properties in the United States, "circa 2017."
+
+**Universe sampled**: "Buildings with at least one unit that is either rented or [vacant-for-rent]," as identified in the 2017 AHS sample. Public housing units were removed using a Department of Housing and Urban Development administrative list.
+
+**Sample selection**: All rental units identified in the 2017 AHS sample the sampling process were part of the sampling frame, which contained 22,620 BSAs. Of those BSAs, 11,338 were selected for the RHFS sample. [As far as I am aware, this was a 2-step sampling process, like 2012 and 2015 waves of the RHFS: I believe the AHS sample is selected from PSUs, but I would have to externally corroborate.]
+
+As was the case in 2015, a high sample size was chosen. "This oversample was needed for three reasons;" writes the Census Bureau, "a high non-response rate, a large number of ineligible properties, and a large number of sampled units that changed strata after being selected from the frame." For some strata, like the 5-24 units and 25-49 units strata, the entire frame was selected,  since the target sample size exceeded the number of units in the frame.
+
+In total, **11,338** BSAs were selected for participation in the 2015 RHFS.
+
+**Table 4: 2018 RHFS Sample Size by Stratum**
+![table04](docs/table04.png)
+
+**Noninterviews**: Of the selected BSAs, the average rate of response was 64.3%. The methodology document does not specify whether this is weighted or unweighted percentage, but the 2012 survey had a similar response rate (65% unweighted, 67% weighted), so the difference is likely not substantive.
+
+Applying the interview rate to completed interviews, I estimate that (4,331 / 0.643) 6736 BSAs were eligible for interview.
