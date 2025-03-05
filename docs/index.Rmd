@@ -42,6 +42,7 @@ HTML('
 <div id="sidebar">
     <strong>Navigation</strong>
     <ul>
+        <li><a href="#intro">Introduction</a></li>
         <li><a href="#section1">Section 1: Detailed Survey Methodology</a></li>
         <li><a href="#section2">Section 2: Response Rates</a></li>
         <li><a href="#section3">Section 3: Sample Selection</a></li>
@@ -51,13 +52,15 @@ HTML('
 ')
 ```
 
+# Introduction {#intro}
 This report assesses whether the Rental Housing Finance Survey (RHFS) response rates are high enough to draw nationally-representative conclusions about U.S. landlord finances. It evaluates the 2012, 2015, 2018, and 2021 waves of the survey.
 
-**A note on data use and restrictions**: The conclusions in this report are based exclusively on publicly available data from the Public Use File (PUF), along with its associated codebooks, methodology reports, and supporting documentation. A more detailed version of the dataset, the Internal Use File (IUF), is restricted to use only by those with explicit data partnerships with the U.S. Census Bureau to prevent unauthorized disclosures of property-specific information.
+This document is dynamically generated using R Markdown and hosted on GitHub Pages. The source code and data used to generate this report are available in the [GitHub repository](https://github.com/lorae/rental-housing).
 
-While both the PUF and IUF contain the same number of property-level observations, the IUF includes additional variables that are either suppressed, topcoded, bottomcoded, or recoded in the PUF to protect respondent confidentiality. For example, geographic identifiers such as census tracts are removed from the PUF. However, the survey codebooks provide a complete listing of variables included in both versions, allowing public users to identify the additional data fields present in the IUF, even without direct access to the restricted survey responses.
+### Data Use and Access
+The findings in this report are based exclusively on publicly available data from the Rental Housing Finance Survey's Public Use Files (PUFs), along with its associated codebooks, methodology reports, and supporting documentation. More detailed datasets, the Internal Use Files (IUFs), are restricted to users with data partnerships with the U.S. Census Bureau.
 
-As such, the response rate concerns outlined in this report apply to the survey in general, whether it's viewed through the restricted-use or public-use datasets.
+While both the PUFs and IUFs contain the same number of property-level observations, IUFs include additional variables that are either suppressed, topcoded, bottomcoded, or recoded PUFs to protect respondent confidentiality. For example, geographic identifiers such as census tracts are removed from survey PUFs. However, survey codebooks provide a complete listing of variables included in both versions, allowing public users to identify the additional fields present in the IUF, even without direct access to the restricted survey responses.
 
 # Response Rates
 The RHFS is administered every 3 years such that a random geographically-representative sample of 
