@@ -1,6 +1,6 @@
 ---
 title: "Rental Housing Finance Survey Response Rate Evaluation"
-date: March 4, 2025
+date: March 5, 2025
 output: html_document
 ---
 
@@ -37,11 +37,14 @@ kable(
 # Survey design
 Detailed notes about survey design follow.
 
+Unresolved question: Does the 2012 RHFS only include 2+ unit rental housing properties? It appears that the 2015 wave includes 1+ unit properties.
+
 ## 2012 Methodology
 
 All material from this section is based upon the [2012 RHFS National Methodology, Weighting, and Error Estimation](https://www.census.gov/programs-surveys/rhfs/technical-documentation/methodology.2012.html#list-tab-2013961092) file.
 
-```{r flowchart, echo=FALSE, out.width='100%', out.height='100%'}
+**Figure 1: 2012 RHFS Survey Attrition**
+```{r fig01, echo=FALSE, out.width='100%', out.height='100%'}
 library(DiagrammeR)
 
 DiagrammeR::grViz("
@@ -55,10 +58,10 @@ digraph flowchart {
 
   total_bsas [label='Total Eligible BSAs\n2,704,708'];
   sampled_bsas [label='Sampled BSAs\n4,030'];
-  refined_sample [label='Refined Sample\n3,467'];
+  eligible_sample [label='Eligible BSAs\n3,467'];
   completed_interview [label='Completed Interviews\n2,264'];
 
-  total_bsas -> sampled_bsas -> refined_sample -> completed_interview;
+  total_bsas -> sampled_bsas -> eligible_sample -> completed_interview;
 }
 ")
 ```
@@ -90,8 +93,51 @@ Even after sample selection, it is not guaranteed that all BSAs selected will be
 - Building found at BSA is under construction or demolished
 - BSA belongs to a manufactured housing community
 
-After this stage of refinement, **3,467** BSAs remained in the sample. [As far as I can intuit from the documentation, at this stage, each BSA is assumed to represent a separate property. However, I am not sure about that.]
+After this stage of refinement, **3,467** BSAs remained in the sample.
 
 **Noninterviews**: Of 3,467 BSAs, **2,264** were interviewed and **1,203** were classified as "Type A" noninterviews: either "(1) no one was available for data collection after repeated visits, (2) the respondent refused to be interviewed, or (3) the interviewer was unable to find the address."
 
 This amounts to an unweighted response rate of 65%, or a weighted property-level response rate of 67%.
+
+## 2015 Methodology
+
+All material from this section is based upon the [2015 Rental Housing Finance Survey Methodology](https://www.census.gov/programs-surveys/rhfs/technical-documentation/methodology.2015.html#list-tab-2013961092) file.
+
+**Figure 2: 2015 RHFS Survey Attrition**
+```{r fig02, echo=FALSE, out.width='100%', out.height='100%'}
+library(DiagrammeR)
+
+DiagrammeR::grViz("
+digraph flowchart {
+  rankdir=LR;  // Left to Right Flow
+
+  // Reduce whitespace
+  graph [pad=0.1, nodesep=0.3, ranksep=0.1]
+
+  node [shape=rectangle, style=filled, fillcolor=lightblue, fontname=Arial, width=1.5, height=0.6];
+
+  total_bsas [label='Total Eligible BSAs\n4,522,722'];
+  sampled_bsas [label='Sampled BSAs\n10,257'];
+  eligible_sample [label='Eligible BSAs\n??'];
+  completed_interview [label='Completed Interviews\n3,887'];
+
+  total_bsas -> sampled_bsas -> eligible_sample -> completed_interview;
+}
+")
+```
+
+**Target Population**: All possible residential rental properties in the United States, "circa 2014."
+
+**Universe sampled**: Single and multi-unit rental housing properties from two sources ; the 2013 American Housing Survey Sample, which provides data on single unit rental housing properties, and the January 2014 Master Address File Extract Files (MAFXs), which provides data on multiunit properties. Public housing units were removed using a Department of Housing and Urban Development administrative list.
+
+**Sample selection**: Similarly to 2012, the sampling process has two steps. First, Primary Sampling Units (PSUs) are selected. Then, BSAs are selected within each PSU.
+
+1. First, single unit rentals were filtered to only include PSUs that were selected in the 2013 American Housing Survey. Then, multiunit buildings were filtered from the Jan 2014 MAFX subset to only include states and counties from the 2013 AHS sample PSUs.
+2. It's not clear whether the 80% rental unit rule was applied to the remaining BSAs. However, as in 2012, BSAs were divided into 5 groups, or "strata", shown in Table 3. From within each of these strata, a random sample was selected. 
+
+A higher sample size was chosen in 2015 than in 2012. "This oversample was needed for three reasons;" writes the Census Bureau, "a high non-reponse rate, a large number of ineligible properties, and a large number of sampled units taht changed strata after being selected from the frame."
+
+In total, **10,257** BSAs were selected for participation in the 2015 RHFS.
+
+**Table 3: 2015 RHFS Sample Size by Stratum**
+![table03](docs/table03.png)
