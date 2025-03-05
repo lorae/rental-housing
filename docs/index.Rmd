@@ -21,7 +21,7 @@ HTML('
     padding: 10px;
     background: #f8f9fa;
     border: 1px solid #ccc;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
 }
 #sidebar ul {
@@ -43,6 +43,7 @@ HTML('
     <strong>Navigation</strong>
     <ul>
         <li><a href="#intro">Introduction</a></li>
+        <li><a href="#summary">Summary</a></li>
         <li><a href="#section1">Section 1: Detailed Survey Methodology</a></li>
         <li><a href="#section2">Section 2: Response Rates</a></li>
         <li><a href="#section3">Section 3: Sample Selection</a></li>
@@ -60,30 +61,53 @@ This document is dynamically generated using R Markdown and hosted on GitHub Pag
 ### Data Use and Access
 The findings in this report are based exclusively on publicly available data from the Rental Housing Finance Survey's Public Use Files (PUFs), along with its associated codebooks, methodology reports, and supporting documentation. More detailed datasets, the Internal Use Files (IUFs), are restricted to users with data partnerships with the U.S. Census Bureau.
 
-While both the PUFs and IUFs contain the same number of property-level observations, IUFs include additional variables that are either suppressed, topcoded, bottomcoded, or recoded PUFs to protect respondent confidentiality. For example, geographic identifiers such as census tracts are removed from survey PUFs. However, survey codebooks provide a complete listing of variables included in both versions, allowing public users to identify the additional fields present in the IUF, even without direct access to the restricted survey responses.
+While both the PUFs and IUFs contain the same number of property-level observations, IUFs include additional variables that are either suppressed, topcoded, bottomcoded, or recoded PUFs to protect respondent confidentiality. For example, geographic identifiers such as census tracts are removed from PUFs. However, survey codebooks provide a complete listing of variables included in both versions, allowing public users to identify the additional fields present in the IUF, even without direct access to the restricted survey responses.
 
-# Response Rates
-The RHFS is administered every 3 years such that a random geographically-representative sample of 
+# Summary {#summary}
+The Rental Housing Finance Survey (RHFS) is conducted every three years with a nationally representative sample of rental properties. To assess whether the responses received remain nationally representative, it is important to evaluate the extent and severity of missing data. Among surveyed properties, the Census Bureau distinguishes between two types of survey nonresponse:
 
-**Table 1: Response Rates in 2012, 2015, 2018, and 2021 Waves**
+**Unit nonresponse** occurs when no substantive data are collected from a sampled property, typically due to unsuccessful contact attempts or refusal to take the survey.
+
+**Item nonresponse** occurs when a respondent completes the survey but skips or provides unusable answers to specific questions.
+
+The overall response rate to a survey question is the product of the unit response rate and the item response rate. For example, in a hypothetical question about rents collection, if 50% of sampled property managers/landlords answer the survey and 50% of survey respondents provide information about rents in their property, then the overall response rate to the question is 25%.
+
+### Unit response rates
+As summarized in Table 1, unit-level survey response rates fall within a range of roughly 40% - 70%. This means that 30% to 60% of sampled properties provided no response at all.
+
+**Table 1: Unit Response Rates in 2012, 2015, 2018, and 2021 Waves**
 ```{r table01, echo = FALSE}
 # These numbers are hard coded since they come directly from the documentation
 complete_interview <- tibble(
   year = c(2012, 2015, 2018, 2021),
   sampled = c(4030, 10257, 11338, 11510),
-  interviewed = c(2260, 3896, 4330, 5106)
+  eligible_after_sampling = c(3467, NA, NA, 10596),
+  interviewed = c(2264, 3896, 4330, 5106)
 ) |>
   mutate(
-    prop = interviewed/sampled * 100
+    prop = interviewed/eligible_after_sampling * 100
   )
 
 # Display the tibble as a formatted table with improved column headers
 kable(
   complete_interview, 
   digits = 0, 
-  col.names = c("Wave", "Sample Size", "Completed Interviews", "Complete Interview Rate (%)")
+  col.names = c("Wave", "Initial Sample Size", "Sample Size, After Removing Non-Eligible Properties", "Complete Interviews", "Unweighted Interview Rate (%)")
 )
 ```
+Note: Sample sizes refer to number of properties. The size of the survey sample after removing non-eligible properties is not recorded in the 2015 and 2018 survey documentation. However, as described below, the best estimate for 2015 is between 5,980 and 8,824 (implying an interview rate of 44 - 65%) and the best estimate for 2018 is 6,736 (64%).
+
+### Item response rates
+
+Table X displays item response rates to selected survey questions, listed below.
+
+1. XXXX
+2. XXXX
+3. XXXX
+4. XXXX
+
+**Table X: XXX Response Rates to Selected Questions in 2012, 2015, 2018, and 2021 Waves**
+
 
 # Section 1: Detailed Survey Methodology {#section1}
 
@@ -187,7 +211,7 @@ digraph flowchart {
 1. First, single unit rentals were filtered to only include PSUs that were selected in the 2013 American Housing Survey. Then, multiunit buildings were filtered from the Jan 2014 MAFX subset to only include states and counties from the 2013 AHS sample PSUs.
 2. It's not clear whether the 80% rental unit rule was applied to the remaining BSAs. However, as in 2012, BSAs were divided into 5 groups, or "strata", shown in Table 3. From within each of these strata, a random sample was selected. 
 
-A higher sample size was chosen in 2015 than in 2012. "This oversample was needed for three reasons;" writes the Census Bureau, "a high non-reponse rate, a large number of ineligible properties, and a large number of sampled units taht changed strata after being selected from the frame."
+A higher sample size was chosen in 2015 than in 2012. "This oversample was needed for three reasons;" writes the Census Bureau, "a high non-reponse rate, a large number of ineligible properties, and a large number of sampled units that changed strata after being selected from the frame."
 
 In total, **10,257** BSAs were selected for participation in the 2015 RHFS.
 
@@ -200,8 +224,6 @@ Note that if the attrition follows the 2012 sampling pattern, then we should exp
 If we instead extrapolate using the unweighted response rate of 65% in 2012, then that would imply 3887 / 0.65 or 5980 BSAs were eligible, meaning that roughly 4277 BSAs attritted due to ineligibility and 2093 attritted due to survey refusal, inability to find address, or inability to contact.
 
 In summary, using 2012 data, my best guess for the response rate among eligible properties is somewhere between 44% and 65%.
-
-TODO: email and ask what number of the 10,257 BSA interviews were not completed due to ineligible properties, and what number of the 10,257 BSA interviews were not completed due to inability to reach the respondent, and what number of the 10,257 BSAs sampled were not completed due to nonresponse / survey refusal. I've downloaded the PUF and that doesn't give any additional information: All the `OUTCOME` codes are 501, "Interview complete."
 
 **Other notes**: The technical documentation warns against comparing the results to the 2018 survey wave.
 
@@ -249,7 +271,7 @@ In total, **11,338** BSAs were selected for participation in the 2018 RHFS.
 
 **Noninterviews**: Of the selected BSAs, the average rate of response was 64.3%. The methodology document does not specify whether this is weighted or unweighted percentage, but the 2012 survey had a similar response rate (65% unweighted, 67% weighted), so the difference is likely not substantive.
 
-Applying the interview rate to completed interviews, I estimate that (4,331 / 0.643) 6736 BSAs were eligible for interview.
+Applying the interview rate to completed interviews, I estimate that (4,331 / 0.643 = ) 6,736 BSAs were eligible for interview.
 
 ## 2021 Methodology
 
