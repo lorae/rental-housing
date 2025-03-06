@@ -98,15 +98,118 @@ kable(
 Note: Sample sizes refer to number of properties. The size of the survey sample after removing non-eligible properties is not recorded in the 2015 and 2018 survey documentation. However, as described below, the best estimate for 2015 is between 5,980 and 8,824 (implying an interview rate of 44 - 65%) and the best estimate for 2018 is 6,736 (64%).
 
 ### Item response rates
+```{r load_surveys, include = FALSE}
+# Load in data from the four survey waves
+rhfs2012 <- read.csv("data/2012/interviewprops.csv")
+rhfs2015 <- read.csv("data/2015/rhfspuf2015final_011222.csv")
+rhfs2018 <- read.csv("data/2018/rhfspuf2018_v2.csv")
+rhfs2021 <- read.csv("data/2021/rhfspuf2021_v1_1.csv")
+```
+
+```{r count_missing, include = FALSE}
+# Define a function to quickly summarize how much missing data there is
+count_missing <- function(table, colname) {
+  count_total <- table |> pull(Count) |> sum()
+  count_missing <- table |> filter(!!sym(colname) == -9) |> pull(Count) |> sum()
+  count_na <- table |> filter(!!sym(colname) == -8) |> pull(Count) |> sum()
+  
+  return(list(
+    count_total = count_total, 
+    count_missing = count_missing,
+    percent_missing = (count_missing / count_total) * 100,
+    count_na = count_na,
+    percent_na = (count_na / count_total) * 100,
+    # Exclude the NA values from both the numerator and demoninator to see the response rate
+    # among eligible respondents
+    percent_other = ((count_total - count_missing - count_na) / (count_total - count_na)) * 100
+  ))
+}
+
+# # Example usage
+# count_missing(table = rhfs2018 |> count(NUMUNITS_R, name = "Count"),
+#               colname = "NUMUNITS_R")
+# # Result:
+# $count_total
+# [1] 4330
+# 
+# $count_missing
+# [1] 0
+# 
+# $percent_missing
+# [1] 0
+# 
+# $count_na
+# [1] 0
+# 
+# $percent_na
+# [1] 0
+# 
+# $percent_other
+# [1] 100
+```
 
 Table X displays item response rates to selected survey questions, listed below.
 
-1. XXXX
-2. XXXX
-3. XXXX
-4. XXXX
+1. NUMUNITS_R: Number of units in property
+2. MRKTVAL_R: Current market value
+3. CAPRATE_R: Capitalization rate for property (Calculated as the sum of all residential and commercial rents, minus operating expenses. This numerator is divided by market value.)
+4. PURPRICE_R: Purchase price of property
+5. CASHDWN: Was there a cash down payment? (Y/N)
+6. OPTAX_R: Previous year's real estate property taxes
 
-**Table X: XXX Response Rates to Selected Questions in 2012, 2015, 2018, and 2021 Waves**
+**Table X: Item Response Rates (%) to Selected Questions in 2012, 2015, 2018, and 2021 Waves**
+```{r tablex, echo = FALSE}
+# Calculate cell values
+# 1. NUMUNITS_R: Number of units in property
+numunits_2012 <- count_missing(rhfs2012 |> count(NUMUNITS_R, name = "Count"), "NUMUNITS_R")$percent_other
+numunits_2015 <- count_missing(rhfs2015 |> count(NUMUNITS_R, name = "Count"), "NUMUNITS_R")$percent_other
+numunits_2018 <- count_missing(rhfs2018 |> count(NUMUNITS_R, name = "Count"), "NUMUNITS_R")$percent_other
+numunits_2021 <- count_missing(rhfs2021 |> count(NUMUNITS_R, name = "Count"), "NUMUNITS_R")$percent_other
+# 2.  MRKTVAL_R: Current market value
+mrktval_2012 <- count_missing(rhfs2012 |> count(MRKTVAL_R, name = "Count"), "MRKTVAL_R")$percent_other
+mrktval_2015 <- count_missing(rhfs2015 |> count(MRKTVAL_R, name = "Count"), "MRKTVAL_R")$percent_other
+mrktval_2018 <- count_missing(rhfs2018 |> count(MRKTVAL_R, name = "Count"), "MRKTVAL_R")$percent_other
+mrktval_2021 <- count_missing(rhfs2021 |> count(MRKTVAL_R, name = "Count"), "MRKTVAL_R")$percent_other
+# 3. CAPRATE_R: Capitalization Rate
+caprate_2012 <- NA # Not offered in 2012 survey
+caprate_2015 <- count_missing(rhfs2015 |> count(CAPRATE_R, name = "Count"), "CAPRATE_R")$percent_other
+caprate_2018 <- count_missing(rhfs2018 |> count(CAPRATE_R, name = "Count"), "CAPRATE_R")$percent_other
+caprate_2021 <- count_missing(rhfs2021 |> count(CAPRATE_R, name = "Count"), "CAPRATE_R")$percent_other
+# 4. PURPRICE_R: Purchase price of property
+purprice_2012 <- count_missing(rhfs2012 |> count(PURPRICE_R, name = "Count"), "PURPRICE_R")$percent_other
+purprice_2015 <- count_missing(rhfs2015 |> count(PURPRICE_R, name = "Count"), "PURPRICE_R")$percent_other
+purprice_2018 <- count_missing(rhfs2018 |> count(PURPRICE_R, name = "Count"), "PURPRICE_R")$percent_other
+purprice_2021 <- count_missing(rhfs2021 |> count(PURPRICE_R, name = "Count"), "PURPRICE_R")$percent_other
+# 5. CASHDWN: Was there a cash down payment? (Y/N)
+cashdwn_2012 <- NA # Not offered in 2012 survey
+cashdwn_2015 <- count_missing(rhfs2015 |> count(CASHDWN, name = "Count"), "CASHDWN")$percent_other
+cashdwn_2018 <- count_missing(rhfs2018 |> count(CASHDWN, name = "Count"), "CASHDWN")$percent_other
+cashdwn_2021 <- count_missing(rhfs2021 |> count(CASHDWN, name = "Count"), "CASHDWN")$percent_other
+# 6. OPTAX_R: Previous year's real estate property taxes
+optax_2012 <- count_missing(rhfs2012 |> count(OPTAX_R, name = "Count"), "OPTAX_R")$percent_other
+optax_2015 <- count_missing(rhfs2015 |> count(OPTAX_R, name = "Count"), "OPTAX_R")$percent_other
+optax_2018 <- count_missing(rhfs2018 |> count(OPTAX_R, name = "Count"), "OPTAX_R")$percent_other
+optax_2021 <- count_missing(rhfs2021 |> count(OPTAX_R, name = "Count"), "OPTAX_R")$percent_other
+
+# Create a tibble for Table X
+table_x <- tibble(
+  Wave = c(2012, 2015, 2018, 2021),
+  NUMUNITS_R = c(numunits_2012, numunits_2015, numunits_2018, numunits_2021),
+  MRKTVAL_R = c(mrktval_2012, mrktval_2015, mrktval_2018, mrktval_2021),
+  CAPRATE_R = c(caprate_2012, caprate_2015, caprate_2018, caprate_2021),
+  PURPRICE_R = c(purprice_2012, purprice_2015, purprice_2018, purprice_2021),
+  CASHDWN = c(cashdwn_2012, cashdwn_2015, cashdwn_2018, cashdwn_2021),
+  OPTAX_R = c(optax_2012, optax_2015, optax_2018, optax_2021)
+)
+
+# Format and display the table
+kable(
+  table_x,
+  digits = 2,
+  col.names = c("Wave", "1. NUMUNITS_R", "2. MRKTVAL_R", "3. CAPRATE_R", "4. PURPRICE_R", "5. CASHDWN", "6. OPTAX_R")
+)
+
+```
 
 
 # Section 1: Detailed Survey Methodology {#section1}
