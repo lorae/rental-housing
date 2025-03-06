@@ -46,9 +46,6 @@ HTML('
         <li><a href="#intro">Introduction</a></li>
         <li><a href="#summary">Summary</a></li>
         <li><a href="#section1">Section 1: Detailed Survey Methodology</a></li>
-        <li><a href="#section2">Section 2: Response Rates</a></li>
-        <li><a href="#section3">Section 3: Sample Selection</a></li>
-        <li><a href="#section4">Section 4: Conclusion</a></li>
     </ul>
 </div>
 ')
@@ -154,14 +151,14 @@ count_missing <- function(table, colname) {
 
 Table 2 displays item response rates to selected survey questions, listed below. Note that percentage rates are only among eligible respondents. So, for example, if a respondent replies "no" to a question about whether they have a debt for the property, their nonresponse to the mortgage interest rate question ("Not applicable") will *not* be counted as a missing answer. It is excluded from both the numerator and denominator of the response.
 
-1. NUMUNITS_R: Number of units in property
-2. MRKTVAL_R: Current market value
-3. CAPRATE_R: Capitalization rate for property (Calculated as the sum of all residential and commercial rents, minus operating expenses. This numerator is divided by market value.)
-4. PURPRICE_R: Purchase price of property
-5. CASHDWN: Was there a cash down payment? (Y/N)
-6. OPTAX_R: Previous year's real estate property taxes
-7. OUTBAL_R: Outstanding balance of 1st debt (Note: In 2018 survey, the variable is called "OUTBAL".)
-8. DEBT: Does the property have a mortgage or similar debt?
+1. **NUMUNITS_R**: Number of units in property
+2. **MRKTVAL_R**: Current market value
+3. **CAPRATE_R**: Capitalization rate for property (Calculated as the sum of all residential and commercial rents, minus operating expenses. This numerator is divided by market value.)
+4. **PURPRICE_R**: Purchase price of property
+5. **CASHDWN**: Was there a cash down payment? (Y/N)
+6. **OPTAX_R**: Previous year's real estate property taxes
+7. **OUTBAL_R**: Outstanding balance of 1st debt (Note: In 2018 survey, the variable is called "OUTBAL".)
+8. **DEBT**: Does the property have a mortgage or similar debt?
 
 **Table 2: Item Response Rates to Selected Questions in 2012, 2015, 2018, and 2021 Waves**
 ```{r table02, echo = FALSE}
@@ -237,7 +234,7 @@ kable(
 ```
 
 
-# Section 1: Detailed Survey Methodology {#section1}
+# Detailed Survey Methodology {#detail}
 
 Detailed notes about survey design follow.
 
@@ -448,11 +445,3 @@ In total, **11,510** [what?]s were selected for participation in the 2021 RHFS. 
 
 **Noninterviews**: Of the **10,596** eligible cases, **5,210** complete interviews were conducted.
 
-# Section 2: Response Rates {#section2}
-placeholder
-
-# Section 3: Sample Selection {#section3}
-placeholder
-
-# Section 4: Conclusion {#section4}
-placeholder
