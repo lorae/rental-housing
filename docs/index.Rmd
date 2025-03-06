@@ -11,49 +11,19 @@ library(htmltools)
 library(kableExtra)
 ```
 
-```{r sidebar, echo=FALSE, results='asis'}
-# Floating sidebar with hyperlinked sections
-HTML('
-<style>
-#sidebar {
-    position: fixed;
-    left: 10px;
-    top: 100px;
-    width: 200px;
-    padding: 10px;
-    background: #f8f9fa;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    line-height: 1.6;
-}
-#sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-#sidebar a {
-    display: block;
-    text-decoration: none;
-    color: #007bff;
-    padding: 4px 0;
-}
-#sidebar a:hover {
-    text-decoration: underline;
-}
-</style>
+# Contents 
 
-<div id="sidebar">
-    <strong>Navigation</strong>
-    <ul>
-        <li><a href="#intro">Introduction</a></li>
-        <li><a href="#keytakeaways">Key Takeaways</a></li>
-        <li><a href="#responserates">Response Rates</a></li>
-        <li><a href="#comparisons">Comparisons Over Time</a></li>
-        <li><a href="#datause">Data Use and Access</a></li>
-        <li><a href="#detail">Detailed Survey Methodology</a></li>
-    </ul>
-</div>
-')
-```
+[Introduction](#intro)
+
+[Key Takeaways](#keytakeaways)
+
+[Response Rates](#responserates)
+
+[Comparisons Over Time](#comparisons)
+
+[Data Use and Access](#datause)
+
+[Detailed Survey Methodology](#detail)
 
 # Introduction {#intro}
 The Rental Housing Finance Survey (RHFS) is conducted every three years with a nationally representative sample of rental properties. 
