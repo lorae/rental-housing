@@ -148,7 +148,7 @@ count_missing <- function(table, colname) {
 # [1] 100
 ```
 
-Table X displays item response rates to selected survey questions, listed below.
+Table 2 displays item response rates to selected survey questions, listed below. Note that percentage rates are only among eligible respondents. So, for example, if a respondent replies "no" to a question about whether they have a debt for the property, their nonresponse to the mortgage interest rate question ("Not applicable") will *not* be counted as a missing answer. It is excluded from both the numerator and denominator of the response.
 
 1. NUMUNITS_R: Number of units in property
 2. MRKTVAL_R: Current market value
@@ -157,8 +157,8 @@ Table X displays item response rates to selected survey questions, listed below.
 5. CASHDWN: Was there a cash down payment? (Y/N)
 6. OPTAX_R: Previous year's real estate property taxes
 
-**Table X: Item Response Rates (%) to Selected Questions in 2012, 2015, 2018, and 2021 Waves**
-```{r tablex, echo = FALSE}
+**Table 2: Item Response Rates (%) to Selected Questions in 2012, 2015, 2018, and 2021 Waves**
+```{r table02, echo = FALSE}
 # Calculate cell values
 # 1. NUMUNITS_R: Number of units in property
 numunits_2012 <- count_missing(rhfs2012 |> count(NUMUNITS_R, name = "Count"), "NUMUNITS_R")$percent_other
@@ -259,8 +259,8 @@ This selection comprises the universe of potentially sampled BSAs.
 1. The United States is divided into 394 Primary Sampling Units (PSUs), which are geographical boundaries that collectively cover all 50 states of land area. All PSUs with at least 100,000 housing units - 170 of them - are guaranteed selection into the sample. The remaining 224 PSUs are grouped into strata based on "similarities in various socioeconomic characteristics," and one PSU is selected per stratum to represent all PSUs in that stratum.
 2. Within each PSU, BSAs with at least 80% of units identified as rental units in the 2010 census are classified as in-scope. These BSAs are divided into 8 groups, shown in Table 2. (Note: These groups are also called "strata" by the Census Bureau, but they differ from the strata grouping PSUs in step 1.) From within each of these 8 strata, a random sample is selected. In total, **4,030** BSAs were selected for participation in the 2012 RHFS.
 
-**Table 2: 2012 RHFS Sample Size by Stratum**
-![table02](supporting_files/table02.png)
+**Table 3: 2012 RHFS Sample Size by Stratum**
+![table03](supporting_files/table03.png)
 
 **Sample refinement**: The target population for the survey is rental *properties*, not BSAs. A *property* is defined as "A BSA or a collection of BSAs and/or other buildings owned by a single entity (person, group, leasing company, and so on). For example, an apartment complex may have several buildings with unique BSAs, but they are owned as one property." Properties known to have multiple BSAs are reweighted to account for their increased probability of selection in the sample.
 
@@ -318,8 +318,8 @@ A higher sample size was chosen in 2015 than in 2012. "This oversample was neede
 
 In total, **10,257** BSAs were selected for participation in the 2015 RHFS.
 
-**Table 3: 2015 RHFS Sample Size by Stratum**
-![table03](supporting_files/table03.png)
+**Table 4: 2015 RHFS Sample Size by Stratum**
+![table04](supporting_files/table04.png)
 **Sample refinement and Noninterviews**: It's unclear how many of the 10,257 sample interviews were not completed due to ineligibility and how many were not completed due to nonresponse. Neither the technical documentation nor the PUF data itself provide information on this question.
 
 Note that if the attrition follows the 2012 sampling pattern, then we should expect that 3467/4030 or 86% of the sampled BSAs were eligible, meaning that roughly 1433 BSAs attritted due to ineligibility and 4937 BSAs attritted due to survey refusal, inability to find address, or inability to contact. This would imply an unweighted response rate of 44%.
@@ -369,8 +369,8 @@ As was the case in 2015, a high sample size was chosen. "This oversample was nee
 
 In total, **11,338** BSAs were selected for participation in the 2018 RHFS.
 
-**Table 4: 2018 RHFS Sample Size by Stratum**
-![table04](supporting_files/table04.png)
+**Table 5: 2018 RHFS Sample Size by Stratum**
+![table05](supporting_files/table05.png)
 
 **Noninterviews**: Of the selected BSAs, the average rate of response was 64.3%. The methodology document does not specify whether this is weighted or unweighted percentage, but the 2012 survey had a similar response rate (65% unweighted, 67% weighted), so the difference is likely not substantive.
 
@@ -418,8 +418,8 @@ As was the case in 2015 and 2018, a high sample size was chosen. "This oversampl
 
 In total, **11,510** [what?]s were selected for participation in the 2021 RHFS. Of those sampled, **10,596** were identified as eligible after removing those with "missing owner information, duplicates, public housing status, or change in rental status."
 
-**Table 5: 2021 RHFS Sample Size by Stratum**
-![table05](supporting_files/table05.png)
+**Table 6: 2021 RHFS Sample Size by Stratum**
+![table06](supporting_files/table06.png)
 
 **Noninterviews**: Of the **10,596** eligible cases, **5,210** complete interviews were conducted.
 
