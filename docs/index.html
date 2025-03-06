@@ -1700,7 +1700,7 @@ Waves</strong></p>
 <th align="right">Sample Size, After Removing Non-Eligible
 Properties</th>
 <th align="right">Complete Interviews</th>
-<th align="right">Unweighted Interview Rate (%)</th>
+<th align="left">Unweighted Interview Rate (%)</th>
 </tr>
 </thead>
 <tbody>
@@ -1709,28 +1709,28 @@ Properties</th>
 <td align="right">4030</td>
 <td align="right">3467</td>
 <td align="right">2264</td>
-<td align="right">65</td>
+<td align="left">65%</td>
 </tr>
 <tr class="even">
 <td align="right">2015</td>
 <td align="right">10257</td>
 <td align="right">NA</td>
 <td align="right">3896</td>
-<td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="odd">
 <td align="right">2018</td>
 <td align="right">11338</td>
 <td align="right">NA</td>
 <td align="right">4330</td>
-<td align="right">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="right">2021</td>
 <td align="right">11510</td>
 <td align="right">10596</td>
 <td align="right">5106</td>
-<td align="right">48</td>
+<td align="left">48%</td>
 </tr>
 </tbody>
 </table>
@@ -1742,8 +1742,13 @@ rate of 44 - 65%) and the best estimate for 2018 is 6,736 (64%).</p>
 </div>
 <div id="item-response-rates" class="section level3">
 <h3>Item response rates</h3>
-<p>Table X displays item response rates to selected survey questions,
-listed below.</p>
+<p>Table 2 displays item response rates to selected survey questions,
+listed below. Note that percentage rates are only among eligible
+respondents. So, for example, if a respondent replies “no” to a question
+about whether they have a debt for the property, their nonresponse to
+the mortgage interest rate question (“Not applicable”) will <em>not</em>
+be counted as a missing answer. It is excluded from both the numerator
+and denominator of the response.</p>
 <ol style="list-style-type: decimal">
 <li>NUMUNITS_R: Number of units in property</li>
 <li>MRKTVAL_R: Current market value</li>
@@ -1753,69 +1758,86 @@ numerator is divided by market value.)</li>
 <li>PURPRICE_R: Purchase price of property</li>
 <li>CASHDWN: Was there a cash down payment? (Y/N)</li>
 <li>OPTAX_R: Previous year’s real estate property taxes</li>
+<li>OUTBAL_R: Outstanding balance of 1st debt (Note: In 2018 survey, the
+variable is called “OUTBAL”.)</li>
+<li>DEBT: Does the property have a mortgage or similar debt?</li>
 </ol>
-<p><strong>Table 2: Item Response Rates (%) to Selected Questions in
-2012, 2015, 2018, and 2021 Waves</strong></p>
+<p><strong>Table 2: Item Response Rates to Selected Questions in 2012,
+2015, 2018, and 2021 Waves</strong></p>
 <table>
 <colgroup>
-<col width="6%" />
-<col width="17%" />
-<col width="16%" />
-<col width="16%" />
-<col width="17%" />
+<col width="4%" />
 <col width="13%" />
+<col width="12%" />
+<col width="12%" />
 <col width="13%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+<col width="7%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="right">Wave</th>
-<th align="right">1. NUMUNITS_R</th>
-<th align="right">2. MRKTVAL_R</th>
-<th align="right">3. CAPRATE_R</th>
-<th align="right">4. PURPRICE_R</th>
-<th align="right">5. CASHDWN</th>
-<th align="right">6. OPTAX_R</th>
+<th align="left">1. NUMUNITS_R</th>
+<th align="left">2. MRKTVAL_R</th>
+<th align="left">3. CAPRATE_R</th>
+<th align="left">4. PURPRICE_R</th>
+<th align="left">5. CASHDWN</th>
+<th align="left">6. OPTAX_R</th>
+<th align="left">7. OUTBAL_R</th>
+<th align="left">8. DEBT</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="right">2012</td>
-<td align="right">100</td>
-<td align="right">90.66</td>
-<td align="right">NA</td>
-<td align="right">84.07</td>
-<td align="right">NA</td>
-<td align="right">93.76</td>
+<td align="left">100%</td>
+<td align="left">91%</td>
+<td align="left">NA</td>
+<td align="left">84%</td>
+<td align="left">NA</td>
+<td align="left">94%</td>
+<td align="left">NA</td>
+<td align="left">100%</td>
 </tr>
 <tr class="even">
 <td align="right">2015</td>
-<td align="right">100</td>
-<td align="right">82.61</td>
-<td align="right">4.44</td>
-<td align="right">60.35</td>
-<td align="right">13.80</td>
-<td align="right">59.27</td>
+<td align="left">100%</td>
+<td align="left">83%</td>
+<td align="left">4%</td>
+<td align="left">60%</td>
+<td align="left">14%</td>
+<td align="left">59%</td>
+<td align="left">69%</td>
+<td align="left">100%</td>
 </tr>
 <tr class="odd">
 <td align="right">2018</td>
-<td align="right">100</td>
-<td align="right">76.30</td>
-<td align="right">3.42</td>
-<td align="right">57.45</td>
-<td align="right">52.21</td>
-<td align="right">51.69</td>
+<td align="left">100%</td>
+<td align="left">76%</td>
+<td align="left">3%</td>
+<td align="left">57%</td>
+<td align="left">52%</td>
+<td align="left">52%</td>
+<td align="left">53%</td>
+<td align="left">100%</td>
 </tr>
 <tr class="even">
 <td align="right">2021</td>
-<td align="right">100</td>
-<td align="right">61.65</td>
-<td align="right">2.86</td>
-<td align="right">44.85</td>
-<td align="right">49.07</td>
-<td align="right">39.25</td>
+<td align="left">100%</td>
+<td align="left">62%</td>
+<td align="left">3%</td>
+<td align="left">45%</td>
+<td align="left">49%</td>
+<td align="left">39%</td>
+<td align="left">23%</td>
+<td align="left">85%</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Note:</strong> <sup>a</sup>All percentages rounded to the
+nearest whole number.</p>
 </div>
 </div>
 <div id="section1" class="section level1">
@@ -1829,8 +1851,8 @@ properties.</p>
 <p>All material from this section is based upon the <a href="https://www.census.gov/programs-surveys/rhfs/technical-documentation/methodology.2012.html#list-tab-2013961092">2012
 RHFS National Methodology, Weighting, and Error Estimation</a> file.</p>
 <p><strong>Figure 1: 2012 RHFS Survey Attrition</strong></p>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-c47142a892f9c0e1637f" style="width:100%;height:100%;"></div>
-<script type="application/json" data-for="htmlwidget-c47142a892f9c0e1637f">{"x":{"diagram":"\ndigraph flowchart {\n  rankdir=LR;  // Left to Right Flow\n\n  // Reduce whitespace\n  graph [pad=0.1, nodesep=0.3, ranksep=0.1]\n\n  node [shape=rectangle, style=filled, fillcolor=lightblue, fontname=Arial, width=1.5, height=0.6];\n\n  total_bsas [label=\"Total Eligible BSAs\n2,704,708\"];\n  sampled_bsas [label=\"Sampled BSAs\n4,030\"];\n  eligible_sample [label=\"Eligible BSAs\n3,467\"];\n  completed_interview [label=\"Completed\nProperty-Level\nInterviews\n2,264\"];\n\n  total_bsas -> sampled_bsas -> eligible_sample -> completed_interview;\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-6794f23cdf32611a3a9d" style="width:100%;height:100%;"></div>
+<script type="application/json" data-for="htmlwidget-6794f23cdf32611a3a9d">{"x":{"diagram":"\ndigraph flowchart {\n  rankdir=LR;  // Left to Right Flow\n\n  // Reduce whitespace\n  graph [pad=0.1, nodesep=0.3, ranksep=0.1]\n\n  node [shape=rectangle, style=filled, fillcolor=lightblue, fontname=Arial, width=1.5, height=0.6];\n\n  total_bsas [label=\"Total Eligible BSAs\n2,704,708\"];\n  sampled_bsas [label=\"Sampled BSAs\n4,030\"];\n  eligible_sample [label=\"Eligible BSAs\n3,467\"];\n  completed_interview [label=\"Completed\nProperty-Level\nInterviews\n2,264\"];\n\n  total_bsas -> sampled_bsas -> eligible_sample -> completed_interview;\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p><strong>Target Population</strong>: All possible residential rental
 properties in the United States (in 2012)?</p>
 <p><strong>Universe sampled</strong>: The Basic Street Address (BSA) is
@@ -1899,8 +1921,8 @@ property-level response rate of 67%.</p>
 <p>All material from this section is based upon the <a href="https://www.census.gov/programs-surveys/rhfs/technical-documentation/methodology.2015.html#list-tab-2013961092">2015
 Rental Housing Finance Survey Methodology</a> file.</p>
 <p><strong>Figure 2: 2015 RHFS Survey Attrition</strong></p>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-c79d64cdf4c2cdc9367b" style="width:100%;height:100%;"></div>
-<script type="application/json" data-for="htmlwidget-c79d64cdf4c2cdc9367b">{"x":{"diagram":"\ndigraph flowchart {\n  rankdir=LR;  // Left to Right Flow\n\n  // Reduce whitespace\n  graph [pad=0.1, nodesep=0.3, ranksep=0.1]\n\n  node [shape=rectangle, style=filled, fillcolor=lightblue, fontname=Arial, width=1.5, height=0.6];\n\n  total_bsas [label=\"Total Eligible BSAs\n4,522,722\"];\n  sampled_bsas [label=\"Sampled BSAs\n10,257\"];\n  eligible_sample [label=\"Eligible BSAs\nUnknown (best guess)\n5,980 - 8,824\"];\n  completed_interview [label=\"Completed\nProperty-Level\nInterviews\n3,887\"];\n\n  total_bsas -> sampled_bsas -> eligible_sample -> completed_interview;\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-9dc00414ccbefd54779d" style="width:100%;height:100%;"></div>
+<script type="application/json" data-for="htmlwidget-9dc00414ccbefd54779d">{"x":{"diagram":"\ndigraph flowchart {\n  rankdir=LR;  // Left to Right Flow\n\n  // Reduce whitespace\n  graph [pad=0.1, nodesep=0.3, ranksep=0.1]\n\n  node [shape=rectangle, style=filled, fillcolor=lightblue, fontname=Arial, width=1.5, height=0.6];\n\n  total_bsas [label=\"Total Eligible BSAs\n4,522,722\"];\n  sampled_bsas [label=\"Sampled BSAs\n10,257\"];\n  eligible_sample [label=\"Eligible BSAs\nUnknown (best guess)\n5,980 - 8,824\"];\n  completed_interview [label=\"Completed\nProperty-Level\nInterviews\n3,887\"];\n\n  total_bsas -> sampled_bsas -> eligible_sample -> completed_interview;\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p><strong>Target Population</strong>: All residential rental properties
 in the United States, “circa 2014.”</p>
 <p><strong>Universe sampled</strong>: Single and multi-unit rental
@@ -1974,8 +1996,8 @@ between the 2015 and 2018 RHFS sample designs.”</em></p>
 <p>All material from this section is based upon the <a href="https://www.census.gov/programs-surveys/rhfs/technical-documentation/methodology.2018.html#list-tab-2013961092">2018
 Rental Housing Finance Survey Methodology</a> file.</p>
 <p><strong>Figure 3: 2018 RHFS Survey Attrition</strong></p>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-62323cf689cfce062f1c" style="width:100%;height:100%;"></div>
-<script type="application/json" data-for="htmlwidget-62323cf689cfce062f1c">{"x":{"diagram":"\ndigraph flowchart {\n  rankdir=LR;  // Left to Right Flow\n\n  // Reduce whitespace\n  graph [pad=0.1, nodesep=0.3, ranksep=0.1]\n\n  node [shape=rectangle, style=filled, fillcolor=lightblue, fontname=Arial, width=1.5, height=0.6];\n\n  total_bsas [label=\"Total Eligible BSAs\nUnknown\"];\n  sampled_bsas [label=\"Sampled BSAs\n11,338\"];\n  eligible_sample [label=\"Eligible BSAs\nUnknown (best guess)\n6,736\"];\n  completed_interview [label=\"Completed\nProperty-Level\nInterviews\n4,331\"];\n\n  total_bsas -> sampled_bsas -> eligible_sample -> completed_interview;\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-f5acbac27e34a5d24859" style="width:100%;height:100%;"></div>
+<script type="application/json" data-for="htmlwidget-f5acbac27e34a5d24859">{"x":{"diagram":"\ndigraph flowchart {\n  rankdir=LR;  // Left to Right Flow\n\n  // Reduce whitespace\n  graph [pad=0.1, nodesep=0.3, ranksep=0.1]\n\n  node [shape=rectangle, style=filled, fillcolor=lightblue, fontname=Arial, width=1.5, height=0.6];\n\n  total_bsas [label=\"Total Eligible BSAs\nUnknown\"];\n  sampled_bsas [label=\"Sampled BSAs\n11,338\"];\n  eligible_sample [label=\"Eligible BSAs\nUnknown (best guess)\n6,736\"];\n  completed_interview [label=\"Completed\nProperty-Level\nInterviews\n4,331\"];\n\n  total_bsas -> sampled_bsas -> eligible_sample -> completed_interview;\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p><strong>Target Population</strong>: All residential rental properties
 in the United States, “circa 2017.”</p>
 <p><strong>Universe sampled</strong>: “Buildings with at least one unit
@@ -2011,8 +2033,8 @@ difference is likely not substantive.</p>
 <p>All material from this section is based upon the <a href="https://www.census.gov/programs-surveys/rhfs/technical-documentation/methodology.2021.html#list-tab-2013961092">2021
 Rental Housing Finance Survey Methodology</a> file.</p>
 <p><strong>Figure 4: 2021 RHFS Survey Attrition</strong></p>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-75487f8b4ed096f631a5" style="width:100%;height:100%;"></div>
-<script type="application/json" data-for="htmlwidget-75487f8b4ed096f631a5">{"x":{"diagram":"\ndigraph flowchart {\n  rankdir=LR;  // Left to Right Flow\n\n  // Reduce whitespace\n  graph [pad=0.1, nodesep=0.3, ranksep=0.1]\n\n  node [shape=rectangle, style=filled, fillcolor=lightblue, fontname=Arial, width=1.5, height=0.6];\n\n  total_bsas [label=\"Total Eligible BSAs\nUnknown\"];\n  sampled_bsas [label=\"Sampled BSAs\n11,510\"];\n  eligible_sample [label=\"Eligible BSAs\n10,596\"];\n  completed_interview [label=\"Completed\nProperty-Level\nInterviews\n5,210\"];\n\n  total_bsas -> sampled_bsas -> eligible_sample -> completed_interview;\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-bbb1f7ce509e6d82a14c" style="width:100%;height:100%;"></div>
+<script type="application/json" data-for="htmlwidget-bbb1f7ce509e6d82a14c">{"x":{"diagram":"\ndigraph flowchart {\n  rankdir=LR;  // Left to Right Flow\n\n  // Reduce whitespace\n  graph [pad=0.1, nodesep=0.3, ranksep=0.1]\n\n  node [shape=rectangle, style=filled, fillcolor=lightblue, fontname=Arial, width=1.5, height=0.6];\n\n  total_bsas [label=\"Total Eligible BSAs\nUnknown\"];\n  sampled_bsas [label=\"Sampled BSAs\n11,510\"];\n  eligible_sample [label=\"Eligible BSAs\n10,596\"];\n  completed_interview [label=\"Completed\nProperty-Level\nInterviews\n5,210\"];\n\n  total_bsas -> sampled_bsas -> eligible_sample -> completed_interview;\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p><strong>Target Population</strong>: All residential rental properties
 in the United States, “circa 2020.”</p>
 <p><strong>Universe sampled</strong>: All 2019 AHS sample units that

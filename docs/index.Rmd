@@ -7,6 +7,7 @@ output: html_document
 library(dplyr)
 library(knitr)
 library(htmltools)
+library(kableExtra)
 ```
 
 ```{r sidebar, echo=FALSE, results='asis'}
@@ -85,13 +86,16 @@ complete_interview <- tibble(
   interviewed = c(2264, 3896, 4330, 5106)
 ) |>
   mutate(
-    prop = interviewed/eligible_after_sampling * 100
+    prop = interviewed / eligible_after_sampling * 100
   )
+
+# Format Unweighted Interview Rate as percentage
+complete_interview_formatted <- complete_interview %>%
+  mutate(prop = ifelse(is.na(prop), "NA", paste0(round(prop), "%")))
 
 # Display the tibble as a formatted table with improved column headers
 kable(
-  complete_interview, 
-  digits = 0, 
+  complete_interview_formatted, 
   col.names = c("Wave", "Initial Sample Size", "Sample Size, After Removing Non-Eligible Properties", "Complete Interviews", "Unweighted Interview Rate (%)")
 )
 ```
@@ -156,8 +160,10 @@ Table 2 displays item response rates to selected survey questions, listed below.
 4. PURPRICE_R: Purchase price of property
 5. CASHDWN: Was there a cash down payment? (Y/N)
 6. OPTAX_R: Previous year's real estate property taxes
+7. OUTBAL_R: Outstanding balance of 1st debt (Note: In 2018 survey, the variable is called "OUTBAL".)
+8. DEBT: Does the property have a mortgage or similar debt?
 
-**Table 2: Item Response Rates (%) to Selected Questions in 2012, 2015, 2018, and 2021 Waves**
+**Table 2: Item Response Rates to Selected Questions in 2012, 2015, 2018, and 2021 Waves**
 ```{r table02, echo = FALSE}
 # Calculate cell values
 # 1. NUMUNITS_R: Number of units in property
@@ -190,24 +196,43 @@ optax_2012 <- count_missing(rhfs2012 |> count(OPTAX_R, name = "Count"), "OPTAX_R
 optax_2015 <- count_missing(rhfs2015 |> count(OPTAX_R, name = "Count"), "OPTAX_R")$percent_other
 optax_2018 <- count_missing(rhfs2018 |> count(OPTAX_R, name = "Count"), "OPTAX_R")$percent_other
 optax_2021 <- count_missing(rhfs2021 |> count(OPTAX_R, name = "Count"), "OPTAX_R")$percent_other
+# 7. OUTBAL_R: Outstanding balance of 1st debt
+outbal_2012 <- NA # Not offered in 2012 survey
+outbal_2015 <- count_missing(rhfs2015 |> count(OUTBAL_R, name = "Count"), "OUTBAL_R")$percent_other
+outbal_2018 <- count_missing(rhfs2018 |> count(OUTBAL, name = "Count"), "OUTBAL")$percent_other
+outbal_2021 <- count_missing(rhfs2021 |> count(OUTBAL_R, name = "Count"), "OUTBAL_R")$percent_other
+# 8. DEBT: Does the property have a mortgage or similar debt?
+debt_2012 <- count_missing(rhfs2012 |> count(DEBT, name = "Count"), "DEBT")$percent_other
+debt_2015 <- count_missing(rhfs2015 |> count(DEBT, name = "Count"), "DEBT")$percent_other
+debt_2018 <- count_missing(rhfs2018 |> count(DEBT, name = "Count"), "DEBT")$percent_other
+debt_2021 <- count_missing(rhfs2021 |> count(DEBT, name = "Count"), "DEBT")$percent_other
+
 
 # Create a tibble for Table X
-table_x <- tibble(
+table02 <- tibble(
   Wave = c(2012, 2015, 2018, 2021),
   NUMUNITS_R = c(numunits_2012, numunits_2015, numunits_2018, numunits_2021),
   MRKTVAL_R = c(mrktval_2012, mrktval_2015, mrktval_2018, mrktval_2021),
   CAPRATE_R = c(caprate_2012, caprate_2015, caprate_2018, caprate_2021),
   PURPRICE_R = c(purprice_2012, purprice_2015, purprice_2018, purprice_2021),
   CASHDWN = c(cashdwn_2012, cashdwn_2015, cashdwn_2018, cashdwn_2021),
-  OPTAX_R = c(optax_2012, optax_2015, optax_2018, optax_2021)
+  OPTAX_R = c(optax_2012, optax_2015, optax_2018, optax_2021),
+  OUTBAL_R = c(outbal_2012, outbal_2015, outbal_2018, outbal_2021),
+  DEBT = c(debt_2012, debt_2015, debt_2018, debt_2021)
 )
 
-# Format and display the table
+# Format numeric columns as percentages
+table02_formatted <- table02 %>%
+  mutate(across(-Wave, ~ ifelse(is.na(.), "NA", paste0(round(.), "%"))))
+
+# Display the formatted table
 kable(
-  table_x,
-  digits = 2,
-  col.names = c("Wave", "1. NUMUNITS_R", "2. MRKTVAL_R", "3. CAPRATE_R", "4. PURPRICE_R", "5. CASHDWN", "6. OPTAX_R")
-)
+  table02_formatted,
+  col.names = c("Wave", "1. NUMUNITS_R", "2. MRKTVAL_R", "3. CAPRATE_R", "4. PURPRICE_R", 
+                "5. CASHDWN", "6. OPTAX_R", "7. OUTBAL_R", "8. DEBT")
+) |> 
+  kableExtra::add_footnote("All percentages rounded to the nearest whole number.")
+
 
 ```
 
