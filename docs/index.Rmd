@@ -45,7 +45,8 @@ HTML('
     <ul>
         <li><a href="#intro">Introduction</a></li>
         <li><a href="#summary">Summary</a></li>
-        <li><a href="#section1">Section 1: Detailed Survey Methodology</a></li>
+        <li><a href="#responserates">Response Rates</a></li>
+        <li><a href="#detail">Detailed Survey Methodology</a></li>
     </ul>
 </div>
 ')
@@ -59,10 +60,13 @@ This document is dynamically generated using R Markdown and hosted on GitHub Pag
 ### Data Use and Access
 The findings in this report are based exclusively on publicly available data from the Rental Housing Finance Survey's Public Use Files (PUFs), along with its associated codebooks, methodology reports, and supporting documentation. More detailed datasets, the Internal Use Files (IUFs), are restricted to users with data partnerships with the U.S. Census Bureau.
 
-While both the PUFs and IUFs contain the same number of property-level observations, IUFs include additional variables that are either suppressed, topcoded, bottomcoded, or recoded PUFs to protect respondent confidentiality. For example, geographic identifiers such as census tracts are removed from PUFs. However, survey codebooks provide a complete listing of variables included in both versions, allowing public users to identify the additional fields present in the IUF, even without direct access to the restricted survey responses.
+While both the PUFs and IUFs contain the same number of property-level observations, IUFs include additional variables that are either suppressed, topcoded, bottomcoded, or recoded PUFs to protect respondent confidentiality. For example, geographic identifiers such as census tracts are removed from PUFs. However, the RHFS survey codebooks provide a complete listing of variables included in both versions, allowing public users to identify the additional fields present in the IUF, even without direct access to the restricted survey responses.
 
 # Summary {#summary}
-The Rental Housing Finance Survey (RHFS) is conducted every three years with a nationally representative sample of rental properties. To assess whether the responses received remain nationally representative, it is important to evaluate the extent and severity of missing data. Among surveyed properties, the Census Bureau distinguishes between two types of survey nonresponse:
+The Rental Housing Finance Survey (RHFS) is conducted every three years with a nationally representative sample of rental properties. 
+
+# Response Rates {#responserates}
+To assess whether the responses received remain nationally representative, it is important to evaluate the extent and severity of missing data. Among surveyed properties, the Census Bureau distinguishes between two types of survey nonresponse:
 
 **Unit nonresponse** occurs when no substantive data are collected from a sampled property, typically due to unsuccessful contact attempts or refusal to take the survey.
 
@@ -94,9 +98,11 @@ complete_interview_formatted <- complete_interview %>%
 kable(
   complete_interview_formatted, 
   col.names = c("Wave", "Initial Sample Size", "Sample Size, After Removing Non-Eligible Properties", "Complete Interviews", "Unweighted Interview Rate (%)")
-)
+) |>  
+  kableExtra::add_footnote("Sample sizes refer to number of properties. The size of the survey sample after removing non-eligible properties is not recorded in the 2015 and 2018 survey documentation. However, as described below, the best estimate for 2015 is between 5,980 and 8,824 (implying an interview rate of 44 - 65%) and the best estimate for 2018 is 6,736 (64%).")
+
 ```
-Note: Sample sizes refer to number of properties. The size of the survey sample after removing non-eligible properties is not recorded in the 2015 and 2018 survey documentation. However, as described below, the best estimate for 2015 is between 5,980 and 8,824 (implying an interview rate of 44 - 65%) and the best estimate for 2018 is 6,736 (64%).
+ 
 
 ### Item response rates
 ```{r load_surveys, include = FALSE}
@@ -149,7 +155,7 @@ count_missing <- function(table, colname) {
 # [1] 100
 ```
 
-Table 2 displays item response rates to selected survey questions, listed below. Note that percentage rates are only among eligible respondents. So, for example, if a respondent replies "no" to a question about whether they have a debt for the property, their nonresponse to the mortgage interest rate question ("Not applicable") will *not* be counted as a missing answer. It is excluded from both the numerator and denominator of the response.
+Table 2 displays item response rates to selected survey questions, listed below. 
 
 1. **NUMUNITS_R**: Number of units in property
 2. **MRKTVAL_R**: Current market value
@@ -228,19 +234,23 @@ kable(
   col.names = c("Wave", "1. NUMUNITS_R", "2. MRKTVAL_R", "3. CAPRATE_R", "4. PURPRICE_R", 
                 "5. CASHDWN", "6. OPTAX_R", "7. OUTBAL_R", "8. DEBT")
 ) |> 
-  kableExtra::add_footnote("All percentages rounded to the nearest whole number.")
+  kableExtra::add_footnote("All percentages rounded to the nearest whole number. Percentage rates are only among eligible respondents. For example, if a respondent replies 'no' to a question about whether they have a debt for their property, then they are not counted toward the response rate in a question about an outstanding mortgage balance.")
 
 
 ```
 
+# Comparisons Over Time {#comparisons}
+According to the [2015 Rental Housing Finance Survey Methodology](https://www.census.gov/programs-surveys/rhfs/technical-documentation/methodology.2015.html#list-tab-2013961092) documentation, the Census Bureau recommends caution when comparing results from the 2012 and 2015 RHFS waves to the 2018 and 2021 waves due to a large American Housing Survey sampling overhaul:
+
+*"Data users should exercise caution when making comparisons between the 2015 and 2018 Rental Housing Finance Survey estimates. The 2015 sample design used separate frames for single and multiunit addresses. Single unit rentals were selected from a frame of eligible rental units identified in the 2013 American Housing Survey (AHS) sample and multi-unit addresses were selected from a frame based on a list of basic street addresses on the Master Address File (MAF) located in 2013 AHS sample Primary Sampling Units (PSUs). The 2018 sample design used a single frame based solely on addresses of rental units identified in the 2017 AHS. The 2017 AHS was based on the new sample that was redesigned in 2015, while the 2013 AHS was based on the previous AHS sample design. Thus, the poststratification of unit control totals had very different distributions across survey years. The differences between 2015 and 2018 RHFS estimates of rental properties can be largely attributed to the differences in the post-stratification of unit control totals and the increase in average property size as measured in units per property between the 2015 and 2018 RHFS sample designs.”*
+
+In addition to issues introduced by sampling redesign, nonresponse may make it difficult to compare results across survey waves. The Census Bureau re-weights observations in all four survey waves to attempt to account for varying rates of nonresponse. Still, highly variable unit and item response rates, shown in table 1 and 2, make valid comparisons between various survey waves difficult. 
 
 # Detailed Survey Methodology {#detail}
 
 Detailed notes about survey design follow.
 
-Unresolved question: Does the 2012 RHFS only include 2+ unit rental housing properties? It appears that the 2015 wave includes 1+ unit properties.
-
-## 2012 Methodology
+### 2012
 
 All material from this section is based upon the [2012 RHFS National Methodology, Weighting, and Error Estimation](https://www.census.gov/programs-surveys/rhfs/technical-documentation/methodology.2012.html#list-tab-2013961092) file.
 
@@ -300,7 +310,7 @@ After this stage of refinement, **3,467** BSAs remained in the sample.
 
 This amounts to an unweighted response rate of 65%, or a weighted property-level response rate of 67%.
 
-## 2015 Methodology
+### 2015
 
 All material from this section is based upon the [2015 Rental Housing Finance Survey Methodology](https://www.census.gov/programs-surveys/rhfs/technical-documentation/methodology.2015.html#list-tab-2013961092) file.
 
@@ -350,11 +360,7 @@ If we instead extrapolate using the unweighted response rate of 65% in 2012, the
 
 In summary, using 2012 data, my best guess for the response rate among eligible properties is somewhere between 44% and 65%.
 
-**Other notes**: The technical documentation warns against comparing the results to the 2018 survey wave.
-
-*"Data users should exercise caution when making comparisons between the 2015 and 2018 Rental Housing Finance Survey estimates. The 2015 sample design used separate frames for single and multiunit addresses. Single unit rentals were selected from a frame of eligible rental units identified in the 2013 American Housing Survey (AHS) sample and multi-unit addresses were selected from a frame based on a list of basic street addresses on the Master Address File (MAF) located in 2013 AHS sample Primary Sampling Units (PSUs).  The 2018 sample design used a single frame based solely on addresses of rental units identified in the 2017 AHS.  The 2017 AHS was based on the new sample that was redesigned in 2015, while the 2013 AHS was based on the previous AHS sample design.  Thus, the poststratification of unit control totals had very different distributions across survey years. The differences between 2015 and 2018 RHFS estimates of rental properties can be largely attributed to the differences in the post-stratification of unit control totals and the increase in average property size as measured in units per property between the 2015 and 2018 RHFS sample designs."*
-
-## 2018 Methodology
+### 2018
 
 All material from this section is based upon the [2018 Rental Housing Finance Survey Methodology](https://www.census.gov/programs-surveys/rhfs/technical-documentation/methodology.2018.html#list-tab-2013961092) file.
 
@@ -398,7 +404,7 @@ In total, **11,338** BSAs were selected for participation in the 2018 RHFS.
 
 Applying the interview rate to completed interviews, I estimate that (4,331 / 0.643 = ) 6,736 BSAs were eligible for interview.
 
-## 2021 Methodology
+### 2021
 
 All material from this section is based upon the [2021 Rental Housing Finance Survey Methodology](https://www.census.gov/programs-surveys/rhfs/technical-documentation/methodology.2021.html#list-tab-2013961092) file.
 
