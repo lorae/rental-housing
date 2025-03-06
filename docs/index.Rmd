@@ -1,6 +1,7 @@
 ---
-title: "Rental Housing Finance Survey Response Rate Evaluation"
+title: "Rental Housing Finance Survey Evaluation: Applicability to Research on Landlord Finances"
 date: March 5, 2025
+author: Lorae Stojanovic
 output: html_document
 ---
 ```{r setup, include = FALSE}
